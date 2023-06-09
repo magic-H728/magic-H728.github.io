@@ -1,0 +1,546 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>magic-H | magic-H</title><meta name="author" content="magic-H"><meta name="copyright" content="magic-H"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="建议点我查看PDF版本一.简介当我们想在文档中输入数学公式简直是噩梦，本篇我会介绍一下在Typora用Markdown的语法书写数学公式的办法。  二.常用的语法1. 固定语法单独显示： 123$$代码$$  单行显示： 1$代码$  案例： 单独显示：  单行显示： 这是单行的显示 2. 上下标，正负无穷   数学表达式 LaTeX代码     x^2    y_1    \infty    -">
+<meta property="og:type" content="website">
+<meta property="og:title" content="magic-H">
+<meta property="og:url" content="https://magic-h.top/Markdown%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F.html">
+<meta property="og:site_name" content="magic-H">
+<meta property="og:description" content="建议点我查看PDF版本一.简介当我们想在文档中输入数学公式简直是噩梦，本篇我会介绍一下在Typora用Markdown的语法书写数学公式的办法。  二.常用的语法1. 固定语法单独显示： 123$$代码$$  单行显示： 1$代码$  案例： 单独显示：  单行显示： 这是单行的显示 2. 上下标，正负无穷   数学表达式 LaTeX代码     x^2    y_1    \infty    -">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2023-06-09T02:57:26.182Z">
+<meta property="article:modified_time" content="2023-06-09T02:57:26.182Z">
+<meta property="article:author" content="magic-H">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://magic-h.top/Markdown%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//sdk.51.la"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>!function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"Jl7ITgjGBeVbLmqO",ck:"Jl7ITgjGBeVbLmqO"});
+</script><script>!(function(c,i,e,b){
+var h=i.createElement("script");
+var f=i.getElementsByTagName("script")[0];
+h.type="text/javascript";
+h.crossorigin=true;
+h.onload=function(){new c[b]["Monitor"]().init({id:"Jl7IrsA7TWlXlR99"});};
+f.parentNode.insertBefore(h,f);h.src=e;})(window,document,"https://sdk.51.la/perf/js-sdk-perf.min.js","LingQue");</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'magic-H',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-06-09 02:57:26'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><script src="/js/sakura.js"></script><script src="/js/snow2.js"></script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="magic-H" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s4.ax1x.com/2022/02/18/HT4dgI.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/%E7%9B%B8%E5%86%8C/"><i class="fa-fw fa fa-video"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/questions/"><i class="fa-fw fa fa-video"></i><span> 答疑</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-home"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">magic-H</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/%E7%9B%B8%E5%86%8C/"><i class="fa-fw fa fa-video"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/questions/"><i class="fa-fw fa fa-video"></i><span> 答疑</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-home"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">magic-H</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h2 id="建议点我查看PDF版本"><a href="#建议点我查看PDF版本" class="headerlink" title="建议点我查看PDF版本"></a><a target="_blank" rel="noopener" href="https://1239392085-my.sharepoint.com/:b:/g/personal/magic-h_1239392085_onmicrosoft_com/EWd-Ck9ccuVAjJimIvPXEl4B8GsVfr0lmE3v6hEsA8H34A?e=NsyDL3">建议点我查看PDF版本</a></h2><h1 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a><code>一.简介</code></h1><p>当我们想在文档中输入数学公式简直是噩梦，本篇我会介绍一下在Typora用Markdown的语法书写数学公式的办法。</p>
+<hr>
+<h1 id="二-常用的语法"><a href="#二-常用的语法" class="headerlink" title="二.常用的语法"></a><code>二.常用的语法</code></h1><h3 id="1-固定语法"><a href="#1-固定语法" class="headerlink" title="1. 固定语法"></a>1. 固定语法</h3><p><strong>单独显示：</strong></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">代码</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>单行显示：</strong></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span>代码<span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>案例：</strong></p>
+<p>单独显示：</p>
+<p><img src="https://g.yuque.com/gr/latex?%5Cbegin%7BBmatrix%7D%0A%20%20%20a%20&%20b%20%5C%5C%0A%20%20%20c%20&%20d%0A%5Cend%7BBmatrix%7D%0A#card=math&code=%5Cbegin%7BBmatrix%7D%0A%20%20%20a%20%26%20b%20%5C%5C%0A%20%20%20c%20%26%20d%0A%5Cend%7BBmatrix%7D%0A&id=u7BPT"></p>
+<p>单行显示：</p>
+<p>这是单行的显示<img src="https://g.yuque.com/gr/latex?x%5E2#card=math&code=x%5E2&id=FGIrt"></p>
+<h3 id="2-上下标，正负无穷"><a href="#2-上下标，正负无穷" class="headerlink" title="2. 上下标，正负无穷"></a>2. 上下标，正负无穷</h3><table>
+<thead>
+<tr>
+<th>数学表达式</th>
+<th>LaTeX代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://g.yuque.com/gr/latex?x%5E2#card=math&code=x%5E2&id=IbtYh"></td>
+<td>x^2</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?y_1#card=math&code=y_1&id=SjTMs"></td>
+<td>y_1</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cinfty#card=math&code=%5Cinfty&id=zM9e9"></td>
+<td>\infty</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?-%5Cinfty#card=math&code=-%5Cinfty&id=GBfJp"></td>
+<td>-\infty</td>
+</tr>
+</tbody></table>
+<h3 id="3-加减乘，分式，根号，省略号"><a href="#3-加减乘，分式，根号，省略号" class="headerlink" title="3. 加减乘，分式，根号，省略号"></a>3. 加减乘，分式，根号，省略号</h3><table>
+<thead>
+<tr>
+<th>数学表达式</th>
+<th>LaTeX代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://g.yuque.com/gr/latex?a+b-c*d#card=math&code=a%2Bb-c%2Ad&id=KPqXC"></td>
+<td>a+b-c*d</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?a%5Cdiv%7Bb%7D#card=math&code=a%5Cdiv%7Bb%7D&id=HWgIR"></td>
+<td>a\div{b}</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?a%5Cpm%7Bb%7D#card=math&code=a%5Cpm%7Bb%7D&id=j5271"></td>
+<td>a\pm{b}</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cfrac%7Ba%7D%7Bb%7D#card=math&code=%5Cfrac%7Ba%7D%7Bb%7D&id=aeooH"></td>
+<td>\frac{a}{b}</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Csqrt%7Bb%7D#card=math&code=%5Csqrt%7Bb%7D&id=nlAdE"></td>
+<td>\sqrt{b}$</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Ccdots#card=math&code=%5Ccdots&id=K8N3C"></td>
+<td>\cdots</td>
+</tr>
+</tbody></table>
+<h3 id="4-三角函数"><a href="#4-三角函数" class="headerlink" title="4. 三角函数"></a>4. 三角函数</h3><table>
+<thead>
+<tr>
+<th>数学表达式</th>
+<th>LaTeX代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Csin%7B%5Ctheta%7D#card=math&code=%5Csin%7B%5Ctheta%7D&id=vIby0"></td>
+<td>\sin{\theta}</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Ccos%7B%5Ctheta%7D#card=math&code=%5Ccos%7B%5Ctheta%7D&id=u3eE6"></td>
+<td>\cos{\theta}</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Ctan%7B%5Ctheta%7D#card=math&code=%5Ctan%7B%5Ctheta%7D&id=uoc4K"></td>
+<td>\tan{\theta}</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Ccot%7B%5Ctheta%7D#card=math&code=%5Ccot%7B%5Ctheta%7D&id=UGKMn"></td>
+<td>\cot{\theta}</td>
+</tr>
+</tbody></table>
+<h3 id="5-矢量，累加累乘，极限"><a href="#5-矢量，累加累乘，极限" class="headerlink" title="5. 矢量，累加累乘，极限"></a>5. 矢量，累加累乘，极限</h3><table>
+<thead>
+<tr>
+<th>数学表达式</th>
+<th>LaTeX代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cvec%7BF%7D#card=math&code=%5Cvec%7BF%7D&id=KzuGR"></td>
+<td>\vec{F}</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Csum_%7Bi=1%7D%5E%7Bn%7D%7Ba_i%7D#card=math&code=%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%7Ba_i%7D&id=oMIJ7"></td>
+<td>\sum_{i&#x3D;1}^{n}{a_i}</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cprod_%7Bi=0%7D%5E%7Bn%7D%7Ba_i%7D#card=math&code=%5Cprod_%7Bi%3D0%7D%5E%7Bn%7D%7Ba_i%7D&id=DKYc7"></td>
+<td>\pord_{i&#x3D;0}^{n}{a_i}</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Clim_%7Ba%5Crightarrow+%5Cinfty%7D%7Ba+b%7D#card=math&code=%5Clim_%7Ba%5Crightarrow%2B%5Cinfty%7D%7Ba%2Bb%7D&id=eg8Ob"></td>
+<td>\lim_{a\rightarrow+\infty}{a+b}</td>
+</tr>
+</tbody></table>
+<h3 id="6-矩阵"><a href="#6-矩阵" class="headerlink" title="6. 矩阵"></a>6. 矩阵</h3><table>
+<thead>
+<tr>
+<th>数学表达式</th>
+<th>LaTeX代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Calpha#card=math&code=%5Calpha&id=ZpgfU"></td>
+<td>\alpha</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cbeta#card=math&code=%5Cbeta&id=UrtBN"></td>
+<td>\beta</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cgamma#card=math&code=%5Cgamma&id=OO5qD"></td>
+<td>\gamma</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cdelta#card=math&code=%5Cdelta&id=bjnBO"></td>
+<td>\delta</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cepsilon#card=math&code=%5Cepsilon&id=vBosD"></td>
+<td>\epsilon</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cvarepsilon#card=math&code=%5Cvarepsilon&id=b18LL"></td>
+<td>\varepsilon</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Ceta#card=math&code=%5Ceta&id=hERj8"></td>
+<td>\eta</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Ctheta#card=math&code=%5Ctheta&id=kFkEe"></td>
+<td>\theta</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Ckappa#card=math&code=%5Ckappa&id=zxVGq"></td>
+<td>\kappa</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Ciota#card=math&code=%5Ciota&id=kpEGE"></td>
+<td>\iota</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Czeta#card=math&code=%5Czeta&id=j6xIp"></td>
+<td>\zeta</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Clambda#card=math&code=%5Clambda&id=sepFw"></td>
+<td>\lambda</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cmu#card=math&code=%5Cmu&id=ZEbqa"></td>
+<td>\mu</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cphi#card=math&code=%5Cphi&id=jrXRt"></td>
+<td>\phi</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cpi#card=math&code=%5Cpi&id=gQfIj"></td>
+<td>\pi</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Crho#card=math&code=%5Crho&id=Mn5wS"></td>
+<td>\rho</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cxi#card=math&code=%5Cxi&id=zHrjR"></td>
+<td>\xi</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cnu#card=math&code=%5Cnu&id=qSKQq"></td>
+<td>\nu</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cupsilon#card=math&code=%5Cupsilon&id=lwR4n"></td>
+<td>\upsilon</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cvarphi#card=math&code=%5Cvarphi&id=ZMqOX"></td>
+<td>\varphi</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cchi#card=math&code=%5Cchi&id=YVAXy"></td>
+<td>\chi</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cpsi#card=math&code=%5Cpsi&id=Kiexi"></td>
+<td>\psi</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Comega#card=math&code=%5Comega&id=ofgC3"></td>
+<td>\omega</td>
+</tr>
+</tbody></table>
+<h3 id="7-关系运算符"><a href="#7-关系运算符" class="headerlink" title="7. 关系运算符"></a>7. 关系运算符</h3><table>
+<thead>
+<tr>
+<th>数学表达式</th>
+<th>LaTeX代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cleq#card=math&code=%5Cleq&id=B07vm"></td>
+<td>\leq</td>
+</tr>
+<tr>
+<td><img src="https://g.yuque.com/gr/latex?%5Cgeq#card=math&code=%5Cgeq&id=ZbXWN"></td>
+<td>\gep</td>
+</tr>
+</tbody></table>
+<h2 id="三-矩阵"><a href="#三-矩阵" class="headerlink" title="三.矩阵"></a><code>三.矩阵</code></h2><h3 id="1-简单矩阵"><a href="#1-简单矩阵" class="headerlink" title="1. 简单矩阵"></a>1. 简单矩阵</h3><p><img src="https://g.yuque.com/gr/latex?%5Cbegin%7Bmatrix%7D%0A%201%20&%202%20&%203%20%5C%5C%0A%204%20&%205%20&%206%20%5C%5C%0A%207%20&%208%20&%209%20%0A%5Cend%7Bmatrix%7D%0A#card=math&code=%5Cbegin%7Bmatrix%7D%0A%201%20%26%202%20%26%203%20%5C%5C%0A%204%20%26%205%20%26%206%20%5C%5C%0A%207%20%26%208%20%26%209%20%0A%5Cend%7Bmatrix%7D%0A&id=o4HJr"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;matrix&#125;</span><br><span class="line"> 1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line"> 4 <span class="built_in">&amp;</span> 5 <span class="built_in">&amp;</span> 6 <span class="keyword">\\</span></span><br><span class="line"> 7 <span class="built_in">&amp;</span> 8 <span class="built_in">&amp;</span> 9 </span><br><span class="line"><span class="keyword">\end</span>&#123;matrix&#125;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;matrix&#125;…<span class="keyword">\end</span>&#123;matrix&#125;为固定语法</span><br><span class="line"><span class="built_in">&amp;</span> 表示空格</span><br><span class="line"><span class="keyword">\\</span> 表示换行</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-带左右括号的矩阵-大中小括号"><a href="#2-带左右括号的矩阵-大中小括号" class="headerlink" title="2.带左右括号的矩阵(大中小括号)"></a>2.带左右括号的矩阵(大中小括号)</h3><p><img src="https://g.yuque.com/gr/latex?%5Cleft%5B%0A%20%5Cbegin%7Bmatrix%7D%0A%20%20%201%20&%202%20&%203%20%5C%5C%0A%20%20%204%20&%205%20&%206%20%5C%5C%0A%20%20%207%20&%208%20&%209%0A%20%20%5Cend%7Bmatrix%7D%0A%20%20%5Cright%5D%0A#card=math&code=%5Cleft%5B%0A%20%5Cbegin%7Bmatrix%7D%0A%20%20%201%20%26%202%20%26%203%20%5C%5C%0A%20%20%204%20%26%205%20%26%206%20%5C%5C%0A%20%20%207%20%26%208%20%26%209%0A%20%20%5Cend%7Bmatrix%7D%0A%20%20%5Cright%5D%0A&id=Qp1SW"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"> <span class="keyword">\left</span>[</span><br><span class="line"> <span class="keyword">\begin</span>&#123;matrix&#125;</span><br><span class="line">   1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">   4 <span class="built_in">&amp;</span> 5 <span class="built_in">&amp;</span> 6 <span class="keyword">\\</span></span><br><span class="line">   7 <span class="built_in">&amp;</span> 8 <span class="built_in">&amp;</span> 9</span><br><span class="line">  <span class="keyword">\end</span>&#123;matrix&#125;</span><br><span class="line">  <span class="keyword">\right</span>]</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line">在原有的代码的前面加上<span class="keyword">\left</span>[，最后加上<span class="keyword">\right</span>]</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://g.yuque.com/gr/latex?%5Cleft%5C%7B%0A%20%5Cbegin%7Bmatrix%7D%0A%20%20%201%20&%202%20&%203%20%5C%5C%0A%20%20%204%20&%205%20&%206%20%5C%5C%0A%20%20%207%20&%208%20&%209%0A%20%20%5Cend%7Bmatrix%7D%0A%20%20%5Cright%5C%7D%0A#card=math&code=%5Cleft%5C%7B%0A%20%5Cbegin%7Bmatrix%7D%0A%20%20%201%20%26%202%20%26%203%20%5C%5C%0A%20%20%204%20%26%205%20%26%206%20%5C%5C%0A%20%20%207%20%26%208%20%26%209%0A%20%20%5Cend%7Bmatrix%7D%0A%20%20%5Cright%5C%7D%0A&id=sG2Wf"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"> <span class="keyword">\left</span><span class="keyword">\[</span></span><br><span class="line"> <span class="keyword">\begin</span>&#123;matrix&#125;</span><br><span class="line">   1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">   4 <span class="built_in">&amp;</span> 5 <span class="built_in">&amp;</span> 6 <span class="keyword">\\</span></span><br><span class="line">   7 <span class="built_in">&amp;</span> 8 <span class="built_in">&amp;</span> 9</span><br><span class="line">  <span class="keyword">\end</span>&#123;matrix&#125;</span><br><span class="line">  <span class="keyword">\right</span><span class="keyword">\]</span></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line">在原有的代码的前面加上<span class="keyword">\left</span><span class="keyword">\&#123;</span>，最后加上<span class="keyword">\right</span><span class="keyword">\&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://g.yuque.com/gr/latex?%5Cleft(%0A%20%5Cbegin%7Bmatrix%7D%0A%20%20%201%20&%202%20&%203%20%5C%5C%0A%20%20%204%20&%205%20&%206%20%5C%5C%0A%20%20%207%20&%208%20&%209%0A%20%20%5Cend%7Bmatrix%7D%0A%20%20%5Cright)%0A#card=math&code=%5Cleft%28%0A%20%5Cbegin%7Bmatrix%7D%0A%20%20%201%20%26%202%20%26%203%20%5C%5C%0A%20%20%204%20%26%205%20%26%206%20%5C%5C%0A%20%20%207%20%26%208%20%26%209%0A%20%20%5Cend%7Bmatrix%7D%0A%20%20%5Cright%29%0A&id=KMD1l"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"> <span class="keyword">\left</span>(</span><br><span class="line"> <span class="keyword">\begin</span>&#123;matrix&#125;</span><br><span class="line">   1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">   4 <span class="built_in">&amp;</span> 5 <span class="built_in">&amp;</span> 6 <span class="keyword">\\</span></span><br><span class="line">   7 <span class="built_in">&amp;</span> 8 <span class="built_in">&amp;</span> 9</span><br><span class="line">  <span class="keyword">\end</span>&#123;matrix&#125;</span><br><span class="line">  <span class="keyword">\right</span>)</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line">在原有的代码的前面加上<span class="keyword">\left</span>(，最后加上<span class="keyword">\right</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-包含希腊字母与省略号"><a href="#3-包含希腊字母与省略号" class="headerlink" title="3.包含希腊字母与省略号"></a><strong>3.包含希腊字母与省略号</strong></h3><p><img src="https://g.yuque.com/gr/latex?%5Cleft%5C%7B%0A%20%5Cbegin%7Bmatrix%7D%0A%201%20%20%20%20%20%20&%202%20%20%20%20%20%20%20%20&%20%5Ccdots%20&%205%20%20%20%20%20%20%20%20%5C%5C%0A%206%20%20%20%20%20%20&%207%20%20%20%20%20%20%20%20&%20%5Ccdots%20&%2010%20%20%20%20%20%20%20%5C%5C%0A%20%5Cvdots%20&%20%5Cvdots%20%20%20&%20%5Cddots%20&%20%5Cvdots%20%20%20%5C%5C%0A%20%5Calpha%20&%20%5Calpha+1%20&%20%5Ccdots%20&%20%5Calpha+4%20%0A%20%5Cend%7Bmatrix%7D%0A%20%5Cright%5C%7D%0A#card=math&code=%5Cleft%5C%7B%0A%20%5Cbegin%7Bmatrix%7D%0A%201%20%20%20%20%20%20%26%202%20%20%20%20%20%20%20%20%26%20%5Ccdots%20%26%205%20%20%20%20%20%20%20%20%5C%5C%0A%206%20%20%20%20%20%20%26%207%20%20%20%20%20%20%20%20%26%20%5Ccdots%20%26%2010%20%20%20%20%20%20%20%5C%5C%0A%20%5Cvdots%20%26%20%5Cvdots%20%20%20%26%20%5Cddots%20%26%20%5Cvdots%20%20%20%5C%5C%0A%20%5Calpha%20%26%20%5Calpha%2B1%20%26%20%5Ccdots%20%26%20%5Calpha%2B4%20%0A%20%5Cend%7Bmatrix%7D%0A%20%5Cright%5C%7D%0A&id=c1Okb"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"> <span class="keyword">\left</span><span class="keyword">\&#123;</span></span><br><span class="line"> <span class="keyword">\begin</span>&#123;matrix&#125;</span><br><span class="line"> 1      <span class="built_in">&amp;</span> 2        <span class="built_in">&amp;</span> <span class="keyword">\cdots</span> <span class="built_in">&amp;</span> 5        <span class="keyword">\\</span></span><br><span class="line"> 6      <span class="built_in">&amp;</span> 7        <span class="built_in">&amp;</span> <span class="keyword">\cdots</span> <span class="built_in">&amp;</span> 10       <span class="keyword">\\</span></span><br><span class="line"> <span class="keyword">\vdots</span> <span class="built_in">&amp;</span> <span class="keyword">\vdots</span>   <span class="built_in">&amp;</span> <span class="keyword">\ddots</span> <span class="built_in">&amp;</span> <span class="keyword">\vdots</span>   <span class="keyword">\\</span></span><br><span class="line"> <span class="keyword">\alpha</span> <span class="built_in">&amp;</span> <span class="keyword">\alpha</span>+1 <span class="built_in">&amp;</span> <span class="keyword">\cdots</span> <span class="built_in">&amp;</span> <span class="keyword">\alpha</span>+4 </span><br><span class="line"> <span class="keyword">\end</span>&#123;matrix&#125;</span><br><span class="line"> <span class="keyword">\right</span><span class="keyword">\&#125;</span></span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line">行省略号<span class="keyword">\cdots</span>，列省略号<span class="keyword">\vdots</span>，斜向省略号（左上至右下）<span class="keyword">\ddots</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-行列式"><a href="#4-行列式" class="headerlink" title="4. 行列式"></a>4. 行列式</h3><p><img src="https://g.yuque.com/gr/latex?%5Cbegin%7Bvmatrix%7D%0A%20%20%201%20&%202%20&%203%20%5C%5C%0A%20%20%204%20&%205%20&%206%20%5C%5C%0A%20%20%207%20&%208%20&%209%0A%20%20%5Cend%7Bvmatrix%7D%0A%5Ctag%7B1%7D%0A#card=math&code=%5Cbegin%7Bvmatrix%7D%0A%20%20%201%20%26%202%20%26%203%20%5C%5C%0A%20%20%204%20%26%205%20%26%206%20%5C%5C%0A%20%20%207%20%26%208%20%26%209%0A%20%20%5Cend%7Bvmatrix%7D%0A%5Ctag%7B1%7D%0A&id=QVL3J"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"> <span class="keyword">\begin</span>&#123;vmatrix&#125;</span><br><span class="line">   1 <span class="built_in">&amp;</span> 2 <span class="built_in">&amp;</span> 3 <span class="keyword">\\</span></span><br><span class="line">   4 <span class="built_in">&amp;</span> 5 <span class="built_in">&amp;</span> 6 <span class="keyword">\\</span></span><br><span class="line">   7 <span class="built_in">&amp;</span> 8 <span class="built_in">&amp;</span> 9</span><br><span class="line">  <span class="keyword">\end</span>&#123;vmatrix&#125;</span><br><span class="line"><span class="keyword">\tag</span>&#123;1&#125;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;vmatrix&#125;...<span class="keyword">\end</span>&#123;vmatrix&#125;为固定语法</span><br><span class="line"><span class="keyword">\tag</span>&#123;1&#125;为右侧的序号</span><br></pre></td></tr></table></figure>
+
+<h2 id="四-方程组、条件表达式"><a href="#四-方程组、条件表达式" class="headerlink" title="四. 方程组、条件表达式"></a><code>四. 方程组、条件表达式</code></h2><h3 id="1-方程组"><a href="#1-方程组" class="headerlink" title="1. 方程组"></a>1. 方程组</h3><p><img src="https://g.yuque.com/gr/latex?%5Cbegin%7Bcases%7D%0A3x%20+%205y%20+%20%20z%20%5C%5C%0A7x%20-%202y%20+%204z%20%5C%5C%0A-6x%20+%203y%20+%202z%0A%5Cend%7Bcases%7D%0A#card=math&code=%5Cbegin%7Bcases%7D%0A3x%20%2B%205y%20%2B%20%20z%20%5C%5C%0A7x%20-%202y%20%2B%204z%20%5C%5C%0A-6x%20%2B%203y%20%2B%202z%0A%5Cend%7Bcases%7D%0A&id=w0m6X"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;cases&#125;</span><br><span class="line">3x + 5y +  z <span class="keyword">\\</span></span><br><span class="line">7x - 2y + 4z <span class="keyword">\\</span></span><br><span class="line">-6x + 3y + 2z</span><br><span class="line"><span class="keyword">\end</span>&#123;cases&#125;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;cases&#125;...<span class="keyword">\end</span>&#123;cases&#125;为固定语法</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-条件表达式"><a href="#2-条件表达式" class="headerlink" title="2. 条件表达式"></a>2. 条件表达式</h3><p><img src="https://g.yuque.com/gr/latex?f(n)%20=%0A%5Cbegin%7Bcases%7D%20%0An/2,%20%20&%20%5Ctext%7Bif%20%7Dn%5Ctext%7B%20is%20even%7D%20%5C%5C%0A3n+1,%20&%20%5Ctext%7Bif%20%7Dn%5Ctext%7B%20is%20odd%7D%0A%5Cend%7Bcases%7D%0A#card=math&code=f%28n%29%20%3D%0A%5Cbegin%7Bcases%7D%20%0An%2F2%2C%20%20%26%20%5Ctext%7Bif%20%7Dn%5Ctext%7B%20is%20even%7D%20%5C%5C%0A3n%2B1%2C%20%26%20%5Ctext%7Bif%20%7Dn%5Ctext%7B%20is%20odd%7D%0A%5Cend%7Bcases%7D%0A&id=sjWMb"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br><span class="line">f(n) =</span><br><span class="line"><span class="keyword">\begin</span>&#123;cases&#125; </span><br><span class="line">n/2,  <span class="built_in">&amp;</span> <span class="keyword">\text</span>&#123;if &#125;n<span class="keyword">\text</span>&#123; is even&#125; <span class="keyword">\\</span></span><br><span class="line">3n+1, <span class="built_in">&amp;</span> <span class="keyword">\text</span>&#123;if &#125;n<span class="keyword">\text</span>&#123; is odd&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;cases&#125;</span><br><span class="line"><span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+</div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s4.ax1x.com/2022/02/18/HT4dgI.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">magic-H</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/magic-H728"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/magic-H728" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:h1239392085@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="card-widget"><div class="item-headline"><i></i><span></span></div><div class="item-content"></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/25737.html" title="数据结构OJ"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202301131413619.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构OJ"/></a><div class="content"><a class="title" href="/25737.html" title="数据结构OJ">数据结构OJ</a><time datetime="2023-01-13T00:00:00.000Z" title="发表于 2023-01-13 00:00:00">2023-01-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/48665.html" title="Notion知识体系管理工具"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207311705467.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Notion知识体系管理工具"/></a><div class="content"><a class="title" href="/48665.html" title="Notion知识体系管理工具">Notion知识体系管理工具</a><time datetime="2022-07-31T00:00:00.000Z" title="发表于 2022-07-31 00:00:00">2022-07-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2567.html" title="Java刷题笔记（三）"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207291555693.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java刷题笔记（三）"/></a><div class="content"><a class="title" href="/2567.html" title="Java刷题笔记（三）">Java刷题笔记（三）</a><time datetime="2022-07-30T00:00:00.000Z" title="发表于 2022-07-30 00:00:00">2022-07-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/62779.html" title="Java刷题笔记（二）"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207291555693.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java刷题笔记（二）"/></a><div class="content"><a class="title" href="/62779.html" title="Java刷题笔记（二）">Java刷题笔记（二）</a><time datetime="2022-07-29T00:00:00.000Z" title="发表于 2022-07-29 00:00:00">2022-07-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/64644.html" title="线性表（下）"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207261740136.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性表（下）"/></a><div class="content"><a class="title" href="/64644.html" title="线性表（下）">线性表（下）</a><time datetime="2022-07-28T00:00:00.000Z" title="发表于 2022-07-28 00:00:00">2022-07-28</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Blog/" style="font-size: 1.1em; color: #999">Blog</a> <a href="/tags/Java/" style="font-size: 1.23em; color: #999ea6">Java</a> <a href="/tags/Kaggle/" style="font-size: 1.1em; color: #999">Kaggle</a> <a href="/tags/MATLAB/" style="font-size: 1.5em; color: #99a9bf">MATLAB</a> <a href="/tags/Markdown/" style="font-size: 1.1em; color: #999">Markdown</a> <a href="/tags/Notion/" style="font-size: 1.1em; color: #999">Notion</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">数据结构</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 1.1em; color: #999">服务器</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.37em; color: #99a4b2">算法</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">17</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">21</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2022-02-18T00:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">82.5k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-06-09T02:58:13.981Z"></div></div></div></div><div class="card-widget Visitor" id="Visitor"><div class="item-headline"><i class="fas fa-heartbeat"></i><span>Visitor data</span></div><div class="item-content"><script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/Jl7ITgjGBeVbLmqO/quote.js?theme=0&col=true&f=12"></script></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By magic-H</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><img src="https://gcore.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207181316087.png">
+<a href="http://www.beian.miit.gov.cn/"  style="color:#f72b07" target="_blank">粤ICP备2022027428号</a><div class="footer_custom_text">Hi, welcome to my <a href="magic-h.top">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://magic-h-mr0qem8oh-magic-h728.vercel.app/',
+      path: location.pathname,
+      visitor: false,
+      dark: 'html[data-theme="dark"]'
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js').then(initWaline)
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="200,100,255" opacity="0.7" zIndex="-1" count="118" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div></body></html>

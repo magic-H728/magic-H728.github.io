@@ -1,0 +1,484 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>MATLAB快速入门（二） | magic-H</title><meta name="keywords" content="MATLAB"><meta name="author" content="magic-H"><meta name="copyright" content="magic-H"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一.简介​	本篇参考官方入门文档编写 ​	前提准备：  MATLAB   二. 快速入门（二）1. 文本和字符  字符串数组中的文本当您处理文本时，将字符序列括在双引号中。可以将文本赋给变量。 1t &#x3D; &quot;Hello, world&quot;;    如果文本包含双引号，请在定义中使用两个双引号。 1q &#x3D; &quot;Something &quot;&quot;quoted&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MATLAB快速入门（二）">
+<meta property="og:url" content="https://magic-h.top/54139.html">
+<meta property="og:site_name" content="magic-H">
+<meta property="og:description" content="一.简介​	本篇参考官方入门文档编写 ​	前提准备：  MATLAB   二. 快速入门（二）1. 文本和字符  字符串数组中的文本当您处理文本时，将字符序列括在双引号中。可以将文本赋给变量。 1t &#x3D; &quot;Hello, world&quot;;    如果文本包含双引号，请在定义中使用两个双引号。 1q &#x3D; &quot;Something &quot;&quot;quoted&quot;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg">
+<meta property="article:published_time" content="2022-07-21T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-09T02:57:26.202Z">
+<meta property="article:author" content="magic-H">
+<meta property="article:tag" content="MATLAB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://magic-h.top/54139"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//sdk.51.la"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>!function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"Jl7ITgjGBeVbLmqO",ck:"Jl7ITgjGBeVbLmqO"});
+</script><script>!(function(c,i,e,b){
+var h=i.createElement("script");
+var f=i.getElementsByTagName("script")[0];
+h.type="text/javascript";
+h.crossorigin=true;
+h.onload=function(){new c[b]["Monitor"]().init({id:"Jl7IrsA7TWlXlR99"});};
+f.parentNode.insertBefore(h,f);h.src=e;})(window,document,"https://sdk.51.la/perf/js-sdk-perf.min.js","LingQue");</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MATLAB快速入门（二）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-09 02:57:26'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><script src="/js/sakura.js"></script><script src="/js/snow2.js"></script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="magic-H" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s4.ax1x.com/2022/02/18/HT4dgI.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/%E7%9B%B8%E5%86%8C/"><i class="fa-fw fa fa-video"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/questions/"><i class="fa-fw fa fa-video"></i><span> 答疑</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-home"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207182124785.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">magic-H</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/%E7%9B%B8%E5%86%8C/"><i class="fa-fw fa fa-video"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/questions/"><i class="fa-fw fa fa-video"></i><span> 答疑</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-home"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MATLAB快速入门（二）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-21T00:00:00.000Z" title="发表于 2022-07-21 00:00:00">2022-07-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-09T02:57:26.202Z" title="更新于 2023-06-09 02:57:26">2023-06-09</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a><code>一.简介</code></h1><p>​	<strong>本篇参考官方入门文档编写</strong></p>
+<p>​	<strong>前提准备：</strong></p>
+<ol>
+<li>MATLAB</li>
+</ol>
+<hr>
+<h1 id="二-快速入门（二）"><a href="#二-快速入门（二）" class="headerlink" title="二. 快速入门（二）"></a><code>二. 快速入门（二）</code></h1><h2 id="1-文本和字符"><a href="#1-文本和字符" class="headerlink" title="1. 文本和字符"></a>1. 文本和字符</h2><p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212021542.png" alt="image-20220721202119421"></p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212021579.png" alt="image-20220721202131456"></p>
+<h3 id="字符串数组中的文本"><a href="#字符串数组中的文本" class="headerlink" title="字符串数组中的文本"></a>字符串数组中的文本</h3><p>当您处理文本时，将字符序列括在双引号中。可以将文本赋给变量。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="string">&quot;Hello, world&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果文本包含双引号，请在定义中使用两个双引号。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">q = <span class="string">&quot;Something &quot;&quot;quoted&quot;&quot; and something else.&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">q = </span><br><span class="line">	<span class="string">&quot;Something &quot;</span>quoted<span class="string">&quot; and something else.&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>与所有 MATLAB® 变量一样，<code>t</code> 和 <code>q</code> 为数组。它们的<em>类</em>或数据类型是 <code>string</code>。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">whos t</span><br><span class="line">  Name        Size            Bytes  Class     Attributes</span><br><span class="line">  t           <span class="number">1</span>x1               <span class="number">174</span>  string   </span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>注意</strong></p>
+<p>使用双引号创建字符串数组是在 R2017a 中引入的。如果您使用的是更早期的版本，请创建字符数组。有关详细信息，请参阅<a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/learn_matlab/character-strings.html#mw_201815f7-78a4-4c4a-abad-83a238f7136b">字符数组中的数据</a>。</p>
+<p>要将文本添加到字符串的末尾，请使用加号运算符 <code>+</code>。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="number">71</span>;</span><br><span class="line">c = (f<span class="number">-32</span>)/<span class="number">1.8</span>;</span><br><span class="line">tempText = <span class="string">&quot;Temperature is &quot;</span> + c + <span class="string">&quot;C&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tempText = </span><br><span class="line">			<span class="string">&quot;Temperature is 21.6667C&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>与数值数组类似，字符串数组可以有多个元素。使用 <code>strlength</code> 函数求数组中每个字符串的长度。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="string">&quot;a&quot;</span>,<span class="string">&quot;bb&quot;</span>,<span class="string">&quot;ccc&quot;</span>; <span class="string">&quot;dddd&quot;</span>,<span class="string">&quot;eeeeee&quot;</span>,<span class="string">&quot;fffffff&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A = </span><br><span class="line">  <span class="number">2</span>×<span class="number">3</span> string array</span><br><span class="line">    <span class="string">&quot;a&quot;</span>       <span class="string">&quot;bb&quot;</span>        <span class="string">&quot;ccc&quot;</span>    </span><br><span class="line">    <span class="string">&quot;dddd&quot;</span>    <span class="string">&quot;eeeeee&quot;</span>    <span class="string">&quot;fffffff&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strlength(A)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ans</span> =</span><br><span class="line">     <span class="number">1</span>     <span class="number">2</span>     <span class="number">3</span></span><br><span class="line">     <span class="number">4</span>     <span class="number">6</span>     <span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="字符数组中的数据"><a href="#字符数组中的数据" class="headerlink" title="字符数组中的数据"></a>字符数组中的数据</h3><p>有时，字符表示的数据并不对应到文本，例如 DNA 序列。您可以将此类数据存储在数据类型为 <code>char</code> 的字符数组中。字符数组使用单引号。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">seq = <span class="string">&#x27;GCTAGAATCC&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>whos seq</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Name      Size            Bytes  Class    Attributes</span><br><span class="line">  seq       <span class="number">1</span>x10               <span class="number">20</span>  char               </span><br></pre></td></tr></table></figure>
+
+
+
+<p>数组的每个元素都包含单个字符。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">seq(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ans</span> = </span><br><span class="line">    <span class="string">&#x27;A&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用方括号串联字符数组，就像串联数值数组一样。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">seq2 = [seq <span class="string">&#x27;ATTAGAAACC&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">seq2 =</span><br><span class="line">    <span class="string">&#x27;GCTAGAATCCATTAGAAACC&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>在字符串数组引入之前编写的程序中，字符数组很常见。接受 <code>string</code> 数据的所有 MATLAB 函数都能接受 <code>char</code> 数据，反之亦然。</p>
+<h2 id="2-调用函数"><a href="#2-调用函数" class="headerlink" title="2. 调用函数"></a>2. 调用函数</h2><p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212027231.png" alt="image-20220721202728086"></p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212027400.png" alt="image-20220721202749263"></p>
+<p> MATLAB® 提供了大量执行计算任务的函数。在其他编程语言中，函数等同于<em>子例程</em>或<em>方法</em>。</p>
+<p>要调用函数，例如 <code>max</code>，请将其输入参数括在圆括号中：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="number">1</span> <span class="number">3</span> <span class="number">5</span>];</span><br><span class="line"><span class="built_in">max</span>(A)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ans</span> = <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果存在多个输入参数，请使用逗号加以分隔：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">B = [<span class="number">3</span> <span class="number">6</span> <span class="number">9</span>];</span><br><span class="line">union(A,B)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ans</span> = <span class="number">1</span>×<span class="number">5</span></span><br><span class="line"></span><br><span class="line">     <span class="number">1</span>     <span class="number">3</span>     <span class="number">5</span>     <span class="number">6</span>     <span class="number">9</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>通过将函数赋值给变量，返回该函数的输出：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">maxA = <span class="built_in">max</span>(A)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">maxA = <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果存在多个输出参数，请将其括在方括号中：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[minA,maxA] = bounds(A)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">minA = <span class="number">1</span></span><br><span class="line">maxA = <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>用引号将任何文本输入括起来：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">disp</span>(<span class="string">&quot;hello world&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hello world</span><br></pre></td></tr></table></figure>
+
+
+
+<p>要调用不需要任何输入且不会返回任何输出的函数，请只键入函数名称：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clc</span><br></pre></td></tr></table></figure>
+
+<p><code>clc</code> 函数清空命令行窗口。</p>
+<h2 id="3-二维图和三维图"><a href="#3-二维图和三维图" class="headerlink" title="3. 二维图和三维图"></a>3. 二维图和三维图</h2><h3 id="线图"><a href="#线图" class="headerlink" title="线图"></a>线图</h3><p>要创建二维线图，请使用 <code>plot</code> 函数。例如，绘制在从 0 到 2<em>π</em> 的值组成的线性间距向量上的正弦函数：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="built_in">linspace</span>(<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">pi</span>);</span><br><span class="line">y = <span class="built_in">sin</span>(x);</span><br><span class="line"><span class="built_in">plot</span>(x,y)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212029646.png" alt="Figure contains an axes object. The axes object contains an object of type line."></p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212036329.png"></p>
+<p>可以标记轴并添加标题。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xlabel(<span class="string">&quot;x&quot;</span>)</span><br><span class="line">ylabel(<span class="string">&quot;sin(x)&quot;</span>)</span><br><span class="line">title(<span class="string">&quot;Plot of the Sine Function&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212029601.png" alt="Figure contains an axes object. The axes object with title Plot of the Sine Function contains an object of type line."></p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212036871.png" alt="image-20220721203513898"></p>
+<p>通过向 <code>plot</code> 函数添加第三个输入参数，您可以使用红色虚线绘制相同的变量。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">plot</span>(x,y,<span class="string">&quot;r--&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212028395.png" alt="Figure contains an axes object. The axes object contains an object of type line."></p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212035090.png" alt="image-20220721203556972"></p>
+<p><code>&quot;r--&quot;</code> 为<em>线条设定</em>。每个设定可包含表示线条颜色、样式和标记的字符。标记是在绘制的每个数据点上显示的符号，例如，<code>+</code>、<code>o</code> 或 <code>*</code>。例如，<code>g:*&quot;</code> 请求绘制使用 <code>*</code> 标记的绿色点线。</p>
+<p>请注意，为第一幅绘图定义的标题和标签不再被用于当前的图窗窗口中。默认情况下，每次调用绘图函数、重置坐标区及其他元素以准备新绘图时，MATLAB® 都会清空图窗。</p>
+<p>要将绘图添加到现有图窗中，请使用 <code>hold on</code>。在使用 <code>hold off</code> 或关闭窗口之前，当前图窗窗口中会显示所有绘图。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="built_in">linspace</span>(<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">pi</span>);</span><br><span class="line">y = <span class="built_in">sin</span>(x);</span><br><span class="line"><span class="built_in">plot</span>(x,y)</span><br><span class="line"></span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"></span><br><span class="line">y2 = <span class="built_in">cos</span>(x);</span><br><span class="line"><span class="built_in">plot</span>(x,y2,<span class="string">&quot;:&quot;</span>)</span><br><span class="line"><span class="built_in">legend</span>(<span class="string">&quot;sin&quot;</span>,<span class="string">&quot;cos&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">hold</span> off</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212029772.png" alt="Figure contains an axes object. The axes object contains 2 objects of type line. These objects represent sin, cos."></p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212040519.png" alt="image-20220721204055402"></p>
+<h3 id="三维绘图"><a href="#三维绘图" class="headerlink" title="三维绘图"></a>三维绘图</h3><p>三维图通常显示一个由带两个变量的函数 <em>z</em>&#x3D;<em>f</em>(<em>x</em>,<em>y</em>) 定义的曲面图。例如，对于给定的行向量和列向量 <code>x</code> 和 <code>y</code>，每个向量包含 [-2,2] 范围内的 20 个点，计算 <em>z</em>&#x3D;<em>x**e</em>−<em>x</em>2−<em>y</em>2 。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="built_in">linspace</span>(<span class="number">-2</span>,<span class="number">2</span>,<span class="number">20</span>);</span><br><span class="line">y = x&#x27;;</span><br><span class="line">z = x .* <span class="built_in">exp</span>(-x.^<span class="number">2</span> - y.^<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>然后，创建曲面图。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">surf(x,y,z)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212028390.png" alt="Figure contains an axes object. The axes object contains an object of type surface."></p>
+<p><code>surf</code> 函数及其伴随函数 <code>mesh</code> 以三维形式显示曲面图。<code>surf</code> 使用颜色显示曲面图的连接线和面。<code>mesh</code> 生成仅以颜色标记连接线条的线框曲面图。</p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212041892.png" alt="image-20220721204142769"></p>
+<h3 id="多个绘图"><a href="#多个绘图" class="headerlink" title="多个绘图"></a>多个绘图</h3><p>您可以使用 <code>tiledlayout</code> 或 <code>subplot</code> 在同一窗口的不同部分显示多个绘图。</p>
+<p><code>tiledlayout</code> 函数是在 R2019b 中引入的，该函数比 <code>subplot</code> 提供更多对标签和间距的控制。例如，在图窗窗口中创建 2×2 布局。然后，每当您要某个绘图出现在下一区域中时，请调用 <code>nexttile</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">t = tiledlayout(2,2);</span><br><span class="line">title(t,&quot;Trigonometric Functions&quot;)</span><br><span class="line">x = linspace(0,30);</span><br><span class="line"></span><br><span class="line">nexttile</span><br><span class="line">plot(x,sin(x))</span><br><span class="line">title(&quot;Sine&quot;)</span><br><span class="line"></span><br><span class="line">nexttile</span><br><span class="line">plot(x,cos(x))</span><br><span class="line">title(&quot;Cosine&quot;)</span><br><span class="line"></span><br><span class="line">nexttile</span><br><span class="line">plot(x,tan(x))</span><br><span class="line">title(&quot;Tangent&quot;)</span><br><span class="line"></span><br><span class="line">nexttile</span><br><span class="line">plot(x,sec(x))</span><br><span class="line">title(&quot;Secant&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212028382.png" alt="Figure contains 4 axes objects. Axes object 1 with title Sine contains an object of type line. Axes object 2 with title Cosine contains an object of type line. Axes object 3 with title Tangent contains an object of type line. Axes object 4 with title Secant contains an object of type line."></p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212039757.png" alt="image-20220721203917634"></p>
+<h2 id="4-编程和脚本"><a href="#4-编程和脚本" class="headerlink" title="4. 编程和脚本"></a>4. 编程和脚本</h2><p><em>脚本</em>是最简单的一种 MATLAB® 程序。脚本是一个包含多行连续的 MATLAB 命令和函数调用的文件。在命令行中键入脚本名称即可运行该脚本。</p>
+<h3 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h3><p>要创建脚本，请使用 <code>edit</code> 命令。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">edit mysphere</span><br></pre></td></tr></table></figure>
+
+<p>该命令会打开一个名为 <code>mysphere.m</code> 的空白文件。输入代码，以创建一个单位球、将半径加倍并绘制结果图：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[x,y,z] = sphere; </span><br><span class="line">r = <span class="number">2</span>;</span><br><span class="line">surf(x*r,y*r,z*r)</span><br><span class="line">axis equal</span><br></pre></td></tr></table></figure>
+
+<p>接下来，添加代码以计算球的表面积和体积：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = <span class="number">4</span>*<span class="built_in">pi</span>*r^<span class="number">2</span>;</span><br><span class="line">V = (<span class="number">4</span>/<span class="number">3</span>)*<span class="built_in">pi</span>*r^<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<p>编写代码时，最好添加描述代码的注释。注释能够让其他人员理解您的代码，并且有助于您在稍后返回代码时再度记起。使用百分比 (<code>%</code>) 符号添加注释。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% Create and plot a sphere with radius r.</span></span><br><span class="line">[x,y,z] = sphere;       <span class="comment">% Create a unit sphere.</span></span><br><span class="line">r = <span class="number">2</span>;</span><br><span class="line">surf(x*r,y*r,z*r)       <span class="comment">% Adjust each dimension and plot.</span></span><br><span class="line">axis equal              <span class="comment">% Use the same scale for each axis. </span></span><br><span class="line"> </span><br><span class="line"><span class="comment">% Find the surface area and volume.</span></span><br><span class="line">A = <span class="number">4</span>*<span class="built_in">pi</span>*r^<span class="number">2</span>;</span><br><span class="line">V = (<span class="number">4</span>/<span class="number">3</span>)*<span class="built_in">pi</span>*r^<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<p>将文件保存在当前文件夹中。要运行脚本，请在命令行中键入脚本名称：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysphere</span><br></pre></td></tr></table></figure>
+
+<p>还可以使用编辑器中的<strong>运行</strong>按钮 <img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212048210.png" alt="img"> 运行脚本。</p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212051420.png" alt="image-20220721205131278"></p>
+<h3 id="实时脚本"><a href="#实时脚本" class="headerlink" title="实时脚本"></a>实时脚本</h3><p>您可以使用<em>实时脚本</em>中的格式设置选项来增强代码，而不是以纯文本编写代码和注释。实时脚本有助于您查看代码和输出并与之交互，还可以包含格式化文本、方程和图像。</p>
+<p>例如，通过选择<strong>另存为</strong>并将文件类型更改为 MATLAB 实时代码文件 (<code>*.mlx</code>)，将 <code>mysphere</code> 转换为实时脚本。然后，用格式化文本替换代码注释。例如：</p>
+<ul>
+<li>将注释行转换为文本。选择以百分比符号开头的每一行，然后选择<strong>文本</strong>、<img src="https://ww2.mathworks.cn/help/matlab/learn_matlab/textbutton.png" alt="img">。删除百分比符号。</li>
+<li>重写文本以替换代码行末尾的注释。要将等宽字体应用于文本中的函数名，请选择 <img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212048215.png" alt="M">。要添加方程，请在<strong>插入</strong>选项卡上选择<strong>方程</strong>。</li>
+</ul>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212048314.png" alt="Text and font options are in the Text section of the Live Editor tab."></p>
+<p>要使用 <code>edit</code> 命令创建新的实时脚本，请在文件名中包含 <code>.mlx</code> 扩展名：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">edit newfile.mlx</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207212056457.png" alt="image-20220721205642321"></p>
+<h3 id="循环及条件语句"><a href="#循环及条件语句" class="headerlink" title="循环及条件语句"></a>循环及条件语句</h3><p>在任何脚本中，您都可以定义按循环重复执行或按条件执行的代码段。循环使用 <code>for</code> 或 <code>while</code> 关键字，条件语句使用 <code>if</code> 或 <code>switch</code>。</p>
+<p>循环在创建序列时很有用。例如，创建一个名为 <code>fibseq</code> 的脚本，该脚本使用 <code>for</code> 循环来计算斐波那契数列的前 100 个数。在这个序列中，最开始的两个数是 1，随后的每个数是前面两个数的和，即 Fn &#x3D; Fn-1 + Fn-2。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">N = <span class="number">100</span>;</span><br><span class="line">f(<span class="number">1</span>) = <span class="number">1</span>;</span><br><span class="line">f(<span class="number">2</span>) = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n = <span class="number">3</span>:N</span><br><span class="line">    f(n) = f(n<span class="number">-1</span>) + f(n<span class="number">-2</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">f(<span class="number">1</span>:<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>运行该脚本时，<code>for</code> 语句定义一个名为 <code>n</code> 的计数器，该计数器从 3 开始。然后，该循环重复为 <code>f(n)</code> 赋值，<code>n</code> 在每次执行中递增，直至达到 100。脚本中的最后一条命令 <code>f(1:10)</code> 显示 <code>f</code> 的前 10 个元素。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ans</span> =</span><br><span class="line">     <span class="number">1</span>     <span class="number">1</span>     <span class="number">2</span>     <span class="number">3</span>     <span class="number">5</span>     <span class="number">8</span>    <span class="number">13</span>    <span class="number">21</span>    <span class="number">34</span>    <span class="number">55</span> </span><br></pre></td></tr></table></figure>
+
+
+
+<p>条件语句仅在给定表达式为 true 时执行。例如，根据随机数的大小为变量赋值：<code>&#39;low&#39;</code>、<code>&#39;medium&#39;</code> 或 <code>&#39;high&#39;</code>。在本例中，随机数是在 1 和 100 之间的一个整数。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">num = randi(<span class="number">100</span>)</span><br><span class="line"><span class="keyword">if</span> num &lt; <span class="number">34</span></span><br><span class="line">   sz = <span class="string">&#x27;low&#x27;</span></span><br><span class="line"><span class="keyword">elseif</span> num &lt; <span class="number">67</span></span><br><span class="line">   sz = <span class="string">&#x27;medium&#x27;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">   sz = <span class="string">&#x27;high&#x27;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>语句 <code>sz = &#39;high&#39;</code> 仅在 <code>num</code> 大于或等于 67 时执行。</p>
+<h3 id="脚本位置"><a href="#脚本位置" class="headerlink" title="脚本位置"></a>脚本位置</h3><p>MATLAB 在特定位置中查找脚本及其他文件。要运行脚本，该文件必须位于当前文件夹或<em>搜索路径</em>中的某个文件夹内。</p>
+<p>默认情况下，MATLAB 安装程序创建的 <code>MATLAB</code> 文件夹位于此搜索路径中。如果要将程序存储在其他文件夹，或者要运行其他文件夹中的程序，请将其添加到此搜索路径。在当前文件夹浏览器中选中相应的文件夹，右键点击，然后选择<strong>添加到路径</strong>。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">magic-H</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://magic-h.top/54139.html">https://magic-h.top/54139.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://magic-H.top" target="_blank">magic-H</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MATLAB/">MATLAB</a></div><div class="post_share"><div class="social-share" data-image="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/57090.html"><img class="prev-cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MATLAB快速入门（三）</div></div></a></div><div class="next-post pull-right"><a href="/17153.html"><img class="next-cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MATLAB快速入门（一）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/17153.html" title="MATLAB快速入门（一）"><img class="cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-20</div><div class="title">MATLAB快速入门（一）</div></div></a></div><div><a href="/57090.html" title="MATLAB快速入门（三）"><img class="cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-22</div><div class="title">MATLAB快速入门（三）</div></div></a></div><div><a href="/15204.html" title="MATLAB快速入门（六）"><img class="cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-23</div><div class="title">MATLAB快速入门（六）</div></div></a></div><div><a href="/45507.html" title="MATLAB快速入门（四）"><img class="cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-23</div><div class="title">MATLAB快速入门（四）</div></div></a></div><div><a href="/1793.html" title="MATLAB快速入门（七）"><img class="cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-24</div><div class="title">MATLAB快速入门（七）</div></div></a></div><div><a href="/29565.html" title="MATLAB快速入门（五）"><img class="cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-23</div><div class="title">MATLAB快速入门（五）</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s4.ax1x.com/2022/02/18/HT4dgI.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">magic-H</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/magic-H728"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/magic-H728" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:h1239392085@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="card-widget"><div class="item-headline"><i></i><span></span></div><div class="item-content"></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E7%AE%80%E4%BB%8B"><span class="toc-text">一.简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="toc-text">二. 快速入门（二）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%96%87%E6%9C%AC%E5%92%8C%E5%AD%97%E7%AC%A6"><span class="toc-text">1. 文本和字符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%96%87%E6%9C%AC"><span class="toc-text">字符串数组中的文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-text">字符数组中的数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">2. 调用函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%92%8C%E4%B8%89%E7%BB%B4%E5%9B%BE"><span class="toc-text">3. 二维图和三维图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E5%9B%BE"><span class="toc-text">线图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BB%B4%E7%BB%98%E5%9B%BE"><span class="toc-text">三维绘图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E7%BB%98%E5%9B%BE"><span class="toc-text">多个绘图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BC%96%E7%A8%8B%E5%92%8C%E8%84%9A%E6%9C%AC"><span class="toc-text">4. 编程和脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-text">脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%97%B6%E8%84%9A%E6%9C%AC"><span class="toc-text">实时脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E5%8F%8A%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="toc-text">循环及条件语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E4%BD%8D%E7%BD%AE"><span class="toc-text">脚本位置</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/25737.html" title="数据结构OJ"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202301131413619.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构OJ"/></a><div class="content"><a class="title" href="/25737.html" title="数据结构OJ">数据结构OJ</a><time datetime="2023-01-13T00:00:00.000Z" title="发表于 2023-01-13 00:00:00">2023-01-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/48665.html" title="Notion知识体系管理工具"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207311705467.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Notion知识体系管理工具"/></a><div class="content"><a class="title" href="/48665.html" title="Notion知识体系管理工具">Notion知识体系管理工具</a><time datetime="2022-07-31T00:00:00.000Z" title="发表于 2022-07-31 00:00:00">2022-07-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2567.html" title="Java刷题笔记（三）"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207291555693.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java刷题笔记（三）"/></a><div class="content"><a class="title" href="/2567.html" title="Java刷题笔记（三）">Java刷题笔记（三）</a><time datetime="2022-07-30T00:00:00.000Z" title="发表于 2022-07-30 00:00:00">2022-07-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/62779.html" title="Java刷题笔记（二）"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207291555693.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java刷题笔记（二）"/></a><div class="content"><a class="title" href="/62779.html" title="Java刷题笔记（二）">Java刷题笔记（二）</a><time datetime="2022-07-29T00:00:00.000Z" title="发表于 2022-07-29 00:00:00">2022-07-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/64644.html" title="线性表（下）"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207261740136.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性表（下）"/></a><div class="content"><a class="title" href="/64644.html" title="线性表（下）">线性表（下）</a><time datetime="2022-07-28T00:00:00.000Z" title="发表于 2022-07-28 00:00:00">2022-07-28</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207182124785.png')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By magic-H</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><img src="https://gcore.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207181316087.png">
+<a href="http://www.beian.miit.gov.cn/"  style="color:#f72b07" target="_blank">粤ICP备2022027428号</a><div class="footer_custom_text">Hi, welcome to my <a href="magic-h.top">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://magic-h-mr0qem8oh-magic-h728.vercel.app/',
+      path: location.pathname,
+      visitor: false,
+      dark: 'html[data-theme="dark"]'
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js').then(initWaline)
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="200,100,255" opacity="0.7" zIndex="-1" count="118" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div></body></html>

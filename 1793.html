@@ -1,0 +1,671 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>MATLAB快速入门（七） | magic-H</title><meta name="keywords" content="MATLAB"><meta name="author" content="magic-H"><meta name="copyright" content="magic-H"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一.简介​	本篇参考官方入门文档编写 ​	前提准备：  MATLAB   二. 快速入门（七）1. 创建网格图和曲面图关于网格图和曲面图MATLAB® 在 x-y 平面中的网格上方使用点的 z 坐标来定义曲面图，并使用直线连接相邻的点。mesh 和 surf 函数以三维形式显示曲面图。  mesh 生成仅使用颜色来标记连接定义点的线条的线框曲面图。 surf 使用颜色显示曲面图的连接线和面。  M">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MATLAB快速入门（七）">
+<meta property="og:url" content="https://magic-h.top/1793.html">
+<meta property="og:site_name" content="magic-H">
+<meta property="og:description" content="一.简介​	本篇参考官方入门文档编写 ​	前提准备：  MATLAB   二. 快速入门（七）1. 创建网格图和曲面图关于网格图和曲面图MATLAB® 在 x-y 平面中的网格上方使用点的 z 坐标来定义曲面图，并使用直线连接相邻的点。mesh 和 surf 函数以三维形式显示曲面图。  mesh 生成仅使用颜色来标记连接定义点的线条的线框曲面图。 surf 使用颜色显示曲面图的连接线和面。  M">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg">
+<meta property="article:published_time" content="2022-07-24T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-09T02:57:26.202Z">
+<meta property="article:author" content="magic-H">
+<meta property="article:tag" content="MATLAB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://magic-h.top/1793"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//sdk.51.la"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>!function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"Jl7ITgjGBeVbLmqO",ck:"Jl7ITgjGBeVbLmqO"});
+</script><script>!(function(c,i,e,b){
+var h=i.createElement("script");
+var f=i.getElementsByTagName("script")[0];
+h.type="text/javascript";
+h.crossorigin=true;
+h.onload=function(){new c[b]["Monitor"]().init({id:"Jl7IrsA7TWlXlR99"});};
+f.parentNode.insertBefore(h,f);h.src=e;})(window,document,"https://sdk.51.la/perf/js-sdk-perf.min.js","LingQue");</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MATLAB快速入门（七）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-09 02:57:26'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mycss.css"><script src="/js/sakura.js"></script><script src="/js/snow2.js"></script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="magic-H" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s4.ax1x.com/2022/02/18/HT4dgI.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/%E7%9B%B8%E5%86%8C/"><i class="fa-fw fa fa-video"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/questions/"><i class="fa-fw fa fa-video"></i><span> 答疑</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-home"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207182124785.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">magic-H</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/%E7%9B%B8%E5%86%8C/"><i class="fa-fw fa fa-video"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/questions/"><i class="fa-fw fa fa-video"></i><span> 答疑</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fa fa-home"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MATLAB快速入门（七）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-24T00:00:00.000Z" title="发表于 2022-07-24 00:00:00">2022-07-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-09T02:57:26.202Z" title="更新于 2023-06-09 02:57:26">2023-06-09</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>28分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="一-简介"><a href="#一-简介" class="headerlink" title="一.简介"></a><code>一.简介</code></h1><p>​	<strong>本篇参考官方入门文档编写</strong></p>
+<p>​	<strong>前提准备：</strong></p>
+<ol>
+<li>MATLAB</li>
+</ol>
+<hr>
+<h1 id="二-快速入门（七）"><a href="#二-快速入门（七）" class="headerlink" title="二. 快速入门（七）"></a><code>二. 快速入门（七）</code></h1><h2 id="1-创建网格图和曲面图"><a href="#1-创建网格图和曲面图" class="headerlink" title="1. 创建网格图和曲面图"></a>1. 创建网格图和曲面图</h2><h3 id="关于网格图和曲面图"><a href="#关于网格图和曲面图" class="headerlink" title="关于网格图和曲面图"></a>关于网格图和曲面图</h3><p>MATLAB® 在 <em>x</em>-<em>y</em> 平面中的网格上方使用点的 <em>z</em> 坐标来定义曲面图，并使用直线连接相邻的点。<a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/mesh.html"><code>mesh</code></a> 和 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/surf.html"><code>surf</code></a> 函数以三维形式显示曲面图。</p>
+<ul>
+<li><code>mesh</code> 生成仅使用颜色来标记连接定义点的线条的线框曲面图。</li>
+<li><code>surf</code> 使用颜色显示曲面图的连接线和面。</li>
+</ul>
+<p>MATLAB 通过将索引的 z 数据值映射到图窗颜色图来标记曲面图颜色。</p>
+<h3 id="可视化包含两个变量的函数"><a href="#可视化包含两个变量的函数" class="headerlink" title="可视化包含两个变量的函数"></a>可视化包含两个变量的函数</h3><p>要显示包含两个变量的函数 <em>z</em> &#x3D; <em>f</em> (<em>x</em>,<em>y</em>)，</p>
+<ol>
+<li>在此函数的域中，生成分别由重复行和重复列组成的 <code>X</code> 和 <code>Y</code> 矩阵。</li>
+<li>使用 <code>X</code> 和 <code>Y</code> 计算此函数并绘制其图形。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/meshgrid.html"><code>meshgrid</code></a> 函数将一个向量或两个向量（即 <code>x</code> 和 <code>y</code>）指定的域转换为矩阵 <code>X</code> 和 <code>Y</code>，以便用于计算包含两个变量的函数。<code>X</code> 的行是向量 <code>x</code> 的副本，<code>Y</code> 的列是向量 <code>y</code> 的副本。</p>
+<h4 id="绘制正弦函数"><a href="#绘制正弦函数" class="headerlink" title="绘制正弦函数"></a>绘制正弦函数</h4><p>尝试此示例Copy Command  Copy Code</p>
+<p>此示例说明如何计算和绘制 <em>x</em> 和 <em>y</em> 方向之间的二维 <code>sinc</code> 函数 sin(<em>R</em>)&#x2F;<em>R</em>。<em>R</em> 是距原点的距离，原点在矩阵的中心。添加 <code>eps</code>（非常小的值）可防止网格图在 <em>R</em><code> = 0</code> 处的点出现孔洞。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[X,Y] = <span class="built_in">meshgrid</span>(<span class="number">-8</span>:<span class="number">.5</span>:<span class="number">8</span>); </span><br><span class="line">R = <span class="built_in">sqrt</span>(X.^<span class="number">2</span> + Y.^<span class="number">2</span>) + <span class="built_in">eps</span>;</span><br><span class="line">Z = <span class="built_in">sin</span>(R)./R;</span><br><span class="line">mesh(X,Y,Z)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240900471.png" alt="Figure contains an axes object. The axes object contains an object of type surface."></p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240904896.png" alt="image-20220724090404773"></p>
+<p>默认情况下，MATLAB 使用当前颜色图来标记网格图颜色。</p>
+<h4 id="彩色曲面图"><a href="#彩色曲面图" class="headerlink" title="彩色曲面图"></a>彩色曲面图</h4><p>尝试此示例Copy Command  Copy Code</p>
+<p>此示例说明如何将 <code>sinc</code> 函数绘制为曲面图，指定颜色图并添加颜色栏以便显示数据与颜色的映射。</p>
+<p>曲面图与网格图相似，但曲面图的矩形面是彩色的。各个面的颜色由 <code>Z</code> 的值及颜色图（即颜色的有序列表）决定。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[X,Y] = <span class="built_in">meshgrid</span>(<span class="number">-8</span>:<span class="number">.5</span>:<span class="number">8</span>);</span><br><span class="line">R = <span class="built_in">sqrt</span>(X.^<span class="number">2</span> + Y.^<span class="number">2</span>) + <span class="built_in">eps</span>;</span><br><span class="line">Z = <span class="built_in">sin</span>(R)./R;</span><br><span class="line">surf(X,Y,Z)</span><br><span class="line">colormap hsv</span><br><span class="line">colorbar</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240900049.png" alt="Figure contains an axes object. The axes object contains an object of type surface."></p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240904687.png" alt="image-20220724090443552"></p>
+<h4 id="将曲面图设置为透明"><a href="#将曲面图设置为透明" class="headerlink" title="将曲面图设置为透明"></a>将曲面图设置为透明</h4><p>尝试此示例Copy Command  Copy Code</p>
+<p>此示例展示如何将曲面图的面设置为不同透明度。透明度（称为 alpha 值）可以针对整个对象进行指定，也可以基于 <code>alphamap</code>（其作用方式与颜色图类似）进行指定。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[X,Y] = <span class="built_in">meshgrid</span>(<span class="number">-8</span>:<span class="number">.5</span>:<span class="number">8</span>);</span><br><span class="line">R = <span class="built_in">sqrt</span>(X.^<span class="number">2</span> + Y.^<span class="number">2</span>) + <span class="built_in">eps</span>;</span><br><span class="line">Z = <span class="built_in">sin</span>(R)./R;</span><br><span class="line">surf(X,Y,Z)</span><br><span class="line">colormap hsv</span><br><span class="line">alpha(<span class="number">.4</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240901517.png" alt="Figure contains an axes object. The axes object contains an object of type surface."></p>
+<p><img src="C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20220724090507206.png" alt="image-20220724090507206"></p>
+<p>MATLAB 显示一个面 alpha 值为 0.4 的曲面。Alpha 值的范围介于 0（完全透明）和 1（不透明）之间。</p>
+<h4 id="使用灯光照亮曲面图"><a href="#使用灯光照亮曲面图" class="headerlink" title="使用灯光照亮曲面图"></a>使用灯光照亮曲面图</h4><p>尝试此示例Copy Command  Copy Code</p>
+<p>本示例展示的曲面图与前面示例所用的曲面图相同，但将其设置为红色，并删除了网格线。然后会在“相机”（相机即为您观察曲面图所处的空间位置）左侧添加一个灯光对象：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[X,Y] = <span class="built_in">meshgrid</span>(<span class="number">-8</span>:<span class="number">.5</span>:<span class="number">8</span>);</span><br><span class="line">R = <span class="built_in">sqrt</span>(X.^<span class="number">2</span> + Y.^<span class="number">2</span>) + <span class="built_in">eps</span>;</span><br><span class="line">Z = <span class="built_in">sin</span>(R)./R;</span><br><span class="line">surf(X,Y,Z,<span class="string">&#x27;FaceColor&#x27;</span>,<span class="string">&#x27;red&#x27;</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;none&#x27;</span>)</span><br><span class="line">camlight left; </span><br><span class="line">lighting phong</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240901468.png" alt="Figure contains an axes object. The axes object contains an object of type surface."></p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240905595.png" alt="image-20220724090536466"></p>
+<p>光照是使用定向光源照亮对象的技术。在特定情况下，此技术能够更清楚地显示曲面图形状的细微差异。光照还可用于增添三维图形的真实感。</p>
+<h4 id="操作曲面图"><a href="#操作曲面图" class="headerlink" title="操作曲面图"></a>操作曲面图</h4><p>图窗工具栏和相机工具栏提供了以交互方式浏览三维图形的方法。通过从图窗<strong>视图</strong>菜单中选择<strong>相机工具栏</strong>可以显示相机工具栏。</p>
+<p>下图显示选择了<strong>三维旋转</strong>工具的两个工具栏。</p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240900500.gif" alt="img"></p>
+<p>这些工具使您能围绕曲面图对象移动相机、缩放、添加光照并执行其他查看操作，而不需执行其他命令。</p>
+<h2 id="2-显示图像"><a href="#2-显示图像" class="headerlink" title="2. 显示图像"></a>2. 显示图像</h2><h3 id="图像数据"><a href="#图像数据" class="headerlink" title="图像数据"></a>图像数据</h3><p>您可以将二维数值数组显示为<em>图像</em>。在图像中，数组元素决定了图像的亮度或颜色。例如，加载一个图像数组及其颜色图：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">load durer</span><br><span class="line">whos</span><br><span class="line">Name          Size         Bytes  Class</span><br><span class="line"></span><br><span class="line">  X           <span class="number">648</span>x509      <span class="number">2638656</span>  double array</span><br><span class="line">  caption     <span class="number">2</span>x28             <span class="number">112</span>  char array</span><br><span class="line">  map         <span class="number">128</span>x3           <span class="number">3072</span>  double array</span><br></pre></td></tr></table></figure>
+
+<p>加载文件 <code>durer.mat</code>，向工作区添加三个变量。数组 <code>X</code> 是一个 648×509 矩阵，<code>map</code> 是作为此图像的颜色图的 128×3 数组。</p>
+<p>MAT 文件（例如 <code>durer.mat</code>）是用于提供保存 MATLAB® 变量的方法的二进制文件。</p>
+<p><code>X</code> 的元素是介于 1 和 128 之间的整数，用作颜色图 <code>map</code> 的索引。要显示图像，请使用 <code>imshow</code> 函数：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imshow(X,map)</span><br></pre></td></tr></table></figure>
+
+<p>重新生成阿尔布雷特•丢勒的蚀刻板画。</p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240907421.png" alt="img"></p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240914390.png" alt="image-20220724091402197"></p>
+<h3 id="读取和写入图像"><a href="#读取和写入图像" class="headerlink" title="读取和写入图像"></a>读取和写入图像</h3><p>使用 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/imread.html"><code>imread</code></a> 函数可以读取标准图像文件（TIFF、JPEG、PNG 等）。<code>imread</code> 返回的数据类型取决于读取的图像类型。</p>
+<p>使用 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/imwrite.html"><code>imwrite</code></a> 函数可以将 MATLAB 数据写入到各种标准图像格式。</p>
+<h2 id="3-打印图形"><a href="#3-打印图形" class="headerlink" title="3. 打印图形"></a>3. 打印图形</h2><h3 id="打印概述"><a href="#打印概述" class="headerlink" title="打印概述"></a>打印概述</h3><p>可以在与计算机连接的打印机上直接打印 MATLAB® 图窗，也可以将图窗导出到 MATLAB 支持的某种标准图形文件格式。打印和导出图窗有两种方法：</p>
+<ul>
+<li>使用<strong>文件</strong>菜单下的<strong>打印</strong>、<strong>打印预览</strong>或<strong>导出设置</strong> GUI 选项。</li>
+<li>使用 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/print.html"><code>print</code></a> 命令即可通过命令行来打印或导出图窗。</li>
+</ul>
+<p>使用 <code>print</code> 命令可以更好地控制驱动程序和文件格式。使用“打印预览”对话框可以更好地控制图窗大小、比例、位置和页面标题。</p>
+<h3 id="从“文件”菜单打印"><a href="#从“文件”菜单打印" class="headerlink" title="从“文件”菜单打印"></a>从“文件”菜单打印</h3><p><strong>文件</strong>菜单下包含两个与打印相关的菜单选项：</p>
+<ul>
+<li><strong>打印预览</strong>选项可显示一个对话框，用于在预览输出页面时设置要打印的图窗的布局和图窗样式，您可以从此对话框打印图窗。此对话框包含以前包含在“页面设置”对话框中的选项。</li>
+<li><strong>打印</strong>选项可显示一个对话框，用于选择打印机、选择标准打印选项和打印图窗。</li>
+</ul>
+<p>使用<strong>打印预览</strong>可以确定打印输出是否符合您的要求。点击“打印预览”对话框上的<strong>帮助</strong>按钮将显示如何设置页面的信息。</p>
+<h3 id="将图窗导出到图形文件"><a href="#将图窗导出到图形文件" class="headerlink" title="将图窗导出到图形文件"></a>将图窗导出到图形文件</h3><p><strong>文件</strong>菜单中的<strong>导出设置</strong>选项可打开一个 GUI，用于设置要保存为图形文件的图窗的文本大小、字体和样式等图形特征。“导出设置”对话框用于定义和应用模板以便自定义和标准化输出。设置之后，您可以将图窗导出为多种标准图形文件格式，例如 EPS、PNG 和 TIFF。</p>
+<h3 id="使用-Print-命令"><a href="#使用-Print-命令" class="headerlink" title="使用 Print 命令"></a>使用 Print 命令</h3><p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/print.html"><code>print</code></a> 命令为发送给打印机的输出类型提供了更大灵活性，并且允许您通过函数和脚本文件来控制打印。结果可以直接发送到默认打印机，也可以存储在特定的输出文件中。可以使用多种输出格式，包括 TIFF、JPEG 和 PNG。</p>
+<p>例如，此语句将当前图窗窗口的内容作为 PNG 图形存储在名为 <code>magicsquare.png</code> 的文件中。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print -dpng magicsquare.png</span><br></pre></td></tr></table></figure>
+
+<p>要以屏幕上的图窗的同等大小保存图窗，请使用下列语句：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set(gcf,<span class="string">&#x27;PaperPositionMode&#x27;</span>,<span class="string">&#x27;auto&#x27;</span>)</span><br><span class="line">print -dpng -r0 magicsquare.png</span><br></pre></td></tr></table></figure>
+
+<p>要将同一图窗存储为 TIFF 文件（分辨率为 200 dpi），请使用以下命令：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print -dtiff -r200 magicsquare.tiff</span><br></pre></td></tr></table></figure>
+
+<p>如果在命令行中键入 <code>print</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print</span><br></pre></td></tr></table></figure>
+
+<p>将在默认打印机上打印当前图窗。</p>
+<h2 id="4-处理图形对象"><a href="#4-处理图形对象" class="headerlink" title="4. 处理图形对象"></a>4. 处理图形对象</h2><h3 id="图形对象"><a href="#图形对象" class="headerlink" title="图形对象"></a>图形对象</h3><p>图形对象是用于显示图形的基本元素。这些对象按层次结构组织，如下图所示。</p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240915786.png" alt="img"></p>
+<p>当调用绘图函数时，MATLAB® 使用各种图形对象（例如，图窗窗口、轴、线条、文本等）创建图形。每个对象都具有一组固定的属性，您可以使用这些属性控制图形的行为和外观。</p>
+<p>例如，以下语句使用变量 y 中的数据创建条形图，并设置关于条形显示方式的属性：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y = [<span class="number">75</span> <span class="number">91</span> <span class="number">105</span> <span class="number">123.5</span> <span class="number">131</span> <span class="number">150</span> <span class="number">179</span> <span class="number">203</span> <span class="number">226</span> <span class="number">249</span> <span class="number">281.5</span>];</span><br><span class="line">bar(y,<span class="string">&#x27;FaceColor&#x27;</span>,<span class="string">&#x27;green&#x27;</span>,<span class="string">&#x27;EdgeColor&#x27;</span>,<span class="string">&#x27;black&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">1.5</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="常见图形对象"><a href="#常见图形对象" class="headerlink" title="常见图形对象"></a>常见图形对象</h4><p>当调用函数以便创建图形时，MATLAB 会创建图形对象的层次结构。例如，调用 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/plot.html"><code>plot</code></a> 函数会创建下列图形对象：</p>
+<ul>
+<li>图窗 - 包含轴、工具栏、菜单等的窗口。</li>
+<li>轴 - 包含表示数据的对象的坐标系</li>
+<li>线条 - 代表传递至 <code>plot</code> 函数的数据值的线条。</li>
+<li>文本 - 用于轴刻度线和可选标题及注释的标签。</li>
+</ul>
+<p>不同类型的图形使用不同对象来表示数据。由于存在许多种图形，因此也存在许多数据对象类型。其中一些用于一般用途，例如线条和矩形，还有一些是用于高度专业的用途，例如误差条、颜色栏和图例。</p>
+<h4 id="访问对象属性"><a href="#访问对象属性" class="headerlink" title="访问对象属性"></a>访问对象属性</h4><p>绘图函数可返回用于创建图形的对象。例如，以下语句将创建一个图形并返回由 <code>plot</code> 函数创建的线条对象：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">1</span>:<span class="number">10</span>;</span><br><span class="line">y = x.^<span class="number">3</span>;</span><br><span class="line">h = <span class="built_in">plot</span>(x,y);</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>h</code> 来设置线条对象的属性。例如，设置它的 <code>Color</code> 属性。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h.Color = <span class="string">&#x27;red&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>此外，也可以在调用绘图函数时指定线条属性。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h = <span class="built_in">plot</span>(x,y,<span class="string">&#x27;Color&#x27;</span>,<span class="string">&#x27;red&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>可以查询线条属性以便查看当前值：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">h.LineWidth</span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line">	<span class="number">0.5000</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="查找对象的属性"><a href="#查找对象的属性" class="headerlink" title="查找对象的属性"></a>查找对象的属性</h4><p>要查看对象的属性，请输入：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get(h)</span><br></pre></td></tr></table></figure>
+
+<p>MATLAB 将返回包含对象属性及当前值的列表。</p>
+<p>要查看对象属性及可能的值信息，请输入：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set(h)</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置对象属性"><a href="#设置对象属性" class="headerlink" title="设置对象属性"></a>设置对象属性</h3><p>可使用 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/set.html"><code>set</code></a> 函数一次设置多个属性。</p>
+<h4 id="设置现有对象的属性"><a href="#设置现有对象的属性" class="headerlink" title="设置现有对象的属性"></a>设置现有对象的属性</h4><p>要对多个对象的同一属性设置相同值，请使用 <code>set</code> 函数。</p>
+<p>例如，下面的语句绘制一个 5×5 矩阵（创建五个线条对象，每列各一个），然后将 <code>Marker</code> 属性设置为正方形，并将 <code>MarkerFaceColor</code> 属性设置为绿色。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">y = <span class="built_in">magic</span>(<span class="number">5</span>);</span><br><span class="line">h = <span class="built_in">plot</span>(y);</span><br><span class="line">set(h,<span class="string">&#x27;Marker&#x27;</span>,<span class="string">&#x27;s&#x27;</span>,<span class="string">&#x27;MarkerFaceColor&#x27;</span>,<span class="string">&#x27;g&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在本示例中，<code>h</code> 是一个包含五个句柄的向量，图形中的每个线条（共五个）各一个句柄。<code>set</code> 语句将所有线条的 <code>Marker</code> 和 <code>MarkerFaceColor</code> 属性设置为相同值。</p>
+<p>要对一个对象设置属性值，请对句柄数组建立索引：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h(<span class="number">1</span>).LineWidth = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置多个属性值"><a href="#设置多个属性值" class="headerlink" title="设置多个属性值"></a>设置多个属性值</h4><p>如果要将每个线条的属性设置为不同值，您可以使用元胞数组存储所有数据，并将其传递给 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/set.html"><code>set</code></a> 命令。例如，创建绘图并保存线条句柄：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">figure</span></span><br><span class="line">y = <span class="built_in">magic</span>(<span class="number">5</span>);</span><br><span class="line">h = <span class="built_in">plot</span>(y);</span><br></pre></td></tr></table></figure>
+
+<p>假定您要为每个线条添加不同标记，并使标记的面颜色与线条的颜色相同。您需要定义两个元胞数组，一个包含属性名，另一个包含属性所需的值。</p>
+<p><code>prop_name</code> 元胞数组包含两个元素：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">prop_name(<span class="number">1</span>) = &#123;<span class="string">&#x27;Marker&#x27;</span>&#125;;</span><br><span class="line">prop_name(<span class="number">2</span>) = &#123;<span class="string">&#x27;MarkerFaceColor&#x27;</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><code>prop_values</code> 元胞数组包含 10 个值：<code>Marker</code> 属性有 5 个值，<code>MarkerFaceColor</code> 属性有 5 个值。请注意，<code>prop_values</code> 是一个二维元胞数组。第一个维表示值应用于 <code>h</code> 中的哪个句柄，第二个维表示值分配给哪个属性：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">prop_values(<span class="number">1</span>,<span class="number">1</span>) = &#123;<span class="string">&#x27;s&#x27;</span>&#125;;</span><br><span class="line">prop_values(<span class="number">1</span>,<span class="number">2</span>) = &#123;h(<span class="number">1</span>).Color&#125;;</span><br><span class="line">prop_values(<span class="number">2</span>,<span class="number">1</span>) = &#123;<span class="string">&#x27;d&#x27;</span>&#125;;</span><br><span class="line">prop_values(<span class="number">2</span>,<span class="number">2</span>) = &#123;h(<span class="number">2</span>).Color&#125;;</span><br><span class="line">prop_values(<span class="number">3</span>,<span class="number">1</span>) = &#123;<span class="string">&#x27;o&#x27;</span>&#125;;</span><br><span class="line">prop_values(<span class="number">3</span>,<span class="number">2</span>) = &#123;h(<span class="number">3</span>).Color&#125;;</span><br><span class="line">prop_values(<span class="number">4</span>,<span class="number">1</span>) = &#123;<span class="string">&#x27;p&#x27;</span>&#125;;</span><br><span class="line">prop_values(<span class="number">4</span>,<span class="number">2</span>) = &#123;h(<span class="number">4</span>).Color&#125;;</span><br><span class="line">prop_values(<span class="number">5</span>,<span class="number">1</span>) = &#123;<span class="string">&#x27;h&#x27;</span>&#125;;</span><br><span class="line">prop_values(<span class="number">5</span>,<span class="number">2</span>) = &#123;h(<span class="number">5</span>).Color&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><code>MarkerFaceColor</code> 始终分配到相应线条的颜色的值（通过获取线条 <code>Color</code> 属性获得）。</p>
+<p>定义元胞数组之后，调用 <code>set</code> 以便指定新属性值：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set(h,prop_name,prop_values)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240921470.png" alt="img"></p>
+<h3 id="用于处理对象的函数"><a href="#用于处理对象的函数" class="headerlink" title="用于处理对象的函数"></a>用于处理对象的函数</h3><p>此表列出了处理对象时常用的函数。</p>
+<table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/allchild.html"><code>allchild</code></a></td>
+<td align="left">查找指定对象的所有子级。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/ancestor.html"><code>ancestor</code></a></td>
+<td align="left">查找图形对象的前代。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/copyobj.html"><code>copyobj</code></a></td>
+<td align="left">复制图形对象。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/delete.html"><code>delete</code></a></td>
+<td align="left">删除对象。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/findall.html"><code>findall</code></a></td>
+<td align="left">查找所有图形对象（包括隐藏句柄）。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/findobj.html"><code>findobj</code></a></td>
+<td align="left">查找具有指定属性值的对象的句柄。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/gca.html"><code>gca</code></a></td>
+<td align="left">返回当前轴的句柄。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/gcf.html"><code>gcf</code></a></td>
+<td align="left">返回当前图窗的句柄。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/gco.html"><code>gco</code></a></td>
+<td align="left">返回当前对象的句柄。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/get.html"><code>get</code></a></td>
+<td align="left">查询对象的属性的值。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/ishandle.html"><code>ishandle</code></a></td>
+<td align="left">如果值是有效对象句柄，则为 True。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/set.html"><code>set</code></a></td>
+<td align="left">设置对象的属性的值。</td>
+</tr>
+</tbody></table>
+<h3 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h3><p>可定义专用绘图函数以简化自定义图形的创建过程。通过定义函数，可以像 MATLAB 绘图函数一样传递参数。</p>
+<p>下面的示例显示了一个 MATLAB 函数，该函数在输入参数 <code>x</code> 指定的范围中计算数学表达式，然后绘制结果。第二次调用 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/plot.html"><code>plot</code></a> 函数会将结果的 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/mean.html"><code>mean</code></a> 值绘制为红线。</p>
+<p>该函数基于计算值修改 y 轴刻度。加入轴标签和标题后，即完成了图形自定义。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">plotFunc</span><span class="params">(x)</span></span></span><br><span class="line">   y = <span class="number">1.5</span>*<span class="built_in">cos</span>(x) + <span class="number">6</span>*<span class="built_in">exp</span>(<span class="number">-.1</span>*x) + <span class="built_in">exp</span>(<span class="number">.07</span>*x).*<span class="built_in">sin</span>(<span class="number">3</span>*x);</span><br><span class="line">   ym = <span class="built_in">mean</span>(y);</span><br><span class="line">   hfig = <span class="built_in">figure</span>(<span class="string">&#x27;Name&#x27;</span>,<span class="string">&#x27;Function and Mean&#x27;</span>);</span><br><span class="line">   hax = axes(<span class="string">&#x27;Parent&#x27;</span>,hfig);</span><br><span class="line">   <span class="built_in">plot</span>(hax,x,y)</span><br><span class="line">   <span class="built_in">hold</span> on</span><br><span class="line">   <span class="built_in">plot</span>(hax,[<span class="built_in">min</span>(x) <span class="built_in">max</span>(x)],[ym ym],<span class="string">&#x27;Color&#x27;</span>,<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">   <span class="built_in">hold</span> off</span><br><span class="line">   ylab = hax.YTick;</span><br><span class="line">   new_ylab = <span class="built_in">sort</span>([ylab, ym]);</span><br><span class="line">   hax.YTick = new_ylab;</span><br><span class="line">   title (<span class="string">&#x27;y = 1.5cos(x) + 6e^&#123;-0.1x&#125; + e^&#123;0.07x&#125;sin(3x)&#x27;</span>)</span><br><span class="line">   xlabel(<span class="string">&#x27;X Axis&#x27;</span>)</span><br><span class="line">   ylabel(<span class="string">&#x27;Y Axis&#x27;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>定义输入参数的值，并调用此函数。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">-10</span>:<span class="number">.005</span>:<span class="number">40</span>;</span><br><span class="line">plotFunc(x)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240921081.png" alt="img"></p>
+<h3 id="查找现有对象的句柄"><a href="#查找现有对象的句柄" class="headerlink" title="查找现有对象的句柄"></a>查找现有对象的句柄</h3><p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/findobj.html"><code>findobj</code></a> 函数可用于通过搜索具有特定属性值的对象来获取图形对象的句柄。使用 <code>findobj</code>，您可以指定任何属性组合的值，这样可以方便地从多个对象中选取一个对象。此外，<code>findobj</code> 还可识别正则表达式。</p>
+<h4 id="查找特定类型的所有对象"><a href="#查找特定类型的所有对象" class="headerlink" title="查找特定类型的所有对象"></a>查找特定类型的所有对象</h4><p>由于所有对象都具有标识对象类型的 <code>Type</code> 属性，因此可以查找特定对象类型的所有匹配项的句柄。例如，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h = findobj(&#x27;Type&#x27;,&#x27;patch&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>查找所有补片对象的句柄。</p>
+<h4 id="查找具有特定属性的对象"><a href="#查找具有特定属性的对象" class="headerlink" title="查找具有特定属性的对象"></a>查找具有特定属性的对象</h4><p>您可以指定多个属性以便缩小搜索范围。例如，</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">plot</span>(<span class="built_in">rand</span>(<span class="number">5</span>),<span class="string">&#x27;r:&#x27;</span>)</span><br><span class="line">h = findobj(<span class="string">&#x27;Type&#x27;</span>,<span class="string">&#x27;line&#x27;</span>,<span class="string">&#x27;Color&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,<span class="string">&#x27;LineStyle&#x27;</span>,<span class="string">&#x27;:&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>查找所有红色点线的句柄。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">h = </span><br><span class="line"></span><br><span class="line">  <span class="number">5</span>x1 Line array:</span><br><span class="line"></span><br><span class="line">  Line</span><br><span class="line">  Line</span><br><span class="line">  Line</span><br><span class="line">  Line</span><br><span class="line">  Line</span><br></pre></td></tr></table></figure>
+
+<h4 id="限制搜索范围"><a href="#限制搜索范围" class="headerlink" title="限制搜索范围"></a>限制搜索范围</h4><p>通过将起始图窗或轴的句柄作为传递的第一个参数，您可以在对象层次结构中指定起点。例如，</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h = findobj(gca,<span class="string">&#x27;Type&#x27;</span>,<span class="string">&#x27;text&#x27;</span>,<span class="string">&#x27;String&#x27;</span>,<span class="string">&#x27;\pi/2&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>仅在当前坐标区中查找 π&#x2F;2。</p>
+<h2 id="5-控制流"><a href="#5-控制流" class="headerlink" title="5. 控制流"></a>5. 控制流</h2><h3 id="条件控制-if、else、switch"><a href="#条件控制-if、else、switch" class="headerlink" title="条件控制 - if、else、switch"></a>条件控制 - if、else、switch</h3><p>条件语句可用于在运行时选择要执行的代码块。最简单的条件语句为 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/if.html"><code>if</code></a> 语句。例如：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% Generate a random number</span></span><br><span class="line">a = randi(<span class="number">100</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">% If it is even, divide by 2</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">rem</span>(a, <span class="number">2</span>) == <span class="number">0</span></span><br><span class="line">    <span class="built_in">disp</span>(<span class="string">&#x27;a is even&#x27;</span>)</span><br><span class="line">    b = a/<span class="number">2</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>通过使用可选关键字 <code>elseif</code> 或 <code>else</code>，<code>if</code> 语句可以包含备用选项。例如：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = randi(<span class="number">100</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> a &lt; <span class="number">30</span></span><br><span class="line">    <span class="built_in">disp</span>(<span class="string">&#x27;small&#x27;</span>)</span><br><span class="line"><span class="keyword">elseif</span> a &lt; <span class="number">80</span></span><br><span class="line">    <span class="built_in">disp</span>(<span class="string">&#x27;medium&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">disp</span>(<span class="string">&#x27;large&#x27;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>再者，当您希望针对一组已知值测试相等性时，请使用 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/switch.html"><code>switch</code></a> 语句。例如：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[dayNum, dayString] = weekday(date, <span class="string">&#x27;long&#x27;</span>, <span class="string">&#x27;en_US&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> dayString</span><br><span class="line">   <span class="keyword">case</span> <span class="string">&#x27;Monday&#x27;</span></span><br><span class="line">      <span class="built_in">disp</span>(<span class="string">&#x27;Start of the work week&#x27;</span>)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">&#x27;Tuesday&#x27;</span></span><br><span class="line">      <span class="built_in">disp</span>(<span class="string">&#x27;Day 2&#x27;</span>)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">&#x27;Wednesday&#x27;</span></span><br><span class="line">      <span class="built_in">disp</span>(<span class="string">&#x27;Day 3&#x27;</span>)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">&#x27;Thursday&#x27;</span></span><br><span class="line">      <span class="built_in">disp</span>(<span class="string">&#x27;Day 4&#x27;</span>)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">&#x27;Friday&#x27;</span></span><br><span class="line">      <span class="built_in">disp</span>(<span class="string">&#x27;Last day of the work week&#x27;</span>)</span><br><span class="line">   <span class="keyword">otherwise</span></span><br><span class="line">      <span class="built_in">disp</span>(<span class="string">&#x27;Weekend!&#x27;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>对于 <code>if</code> 和 <code>switch</code>，MATLAB® 执行与第一个 true 条件相对应的代码，然后退出该代码块。每个条件语句都需要 <code>end</code> 关键字。</p>
+<p>一般而言，如果您具有多个可能的离散已知值，读取 <code>switch</code> 语句比读取 <code>if</code> 语句更容易。但是，无法测试 <code>switch</code> 和 <code>case</code> 值之间的不相等性。例如，无法使用 <code>switch</code> 实现以下类型的条件：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">yourNumber = input(<span class="string">&#x27;Enter a number: &#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> yourNumber &lt; <span class="number">0</span></span><br><span class="line">    <span class="built_in">disp</span>(<span class="string">&#x27;Negative&#x27;</span>)</span><br><span class="line"><span class="keyword">elseif</span> yourNumber &gt; <span class="number">0</span></span><br><span class="line">    <span class="built_in">disp</span>(<span class="string">&#x27;Positive&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">disp</span>(<span class="string">&#x27;Zero&#x27;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="条件语句中的数组比较"><a href="#条件语句中的数组比较" class="headerlink" title="条件语句中的数组比较"></a>条件语句中的数组比较</h4><p>了解如何将关系运算符和 <code>if</code> 语句用于矩阵非常重要。如果您希望检查两个变量之间的相等性，您可以使用</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> A == B, ...</span><br></pre></td></tr></table></figure>
+
+<p>这是有效的 MATLAB 代码，并且当 <code>A</code> 和 <code>B</code> 为标量时，此代码会如期运行。但是，当 <code>A</code> 和 <code>B</code> 为矩阵时，用 <code>A == B</code> 不会测试二者<em>是否</em>相等，而会测试二者相等的<em>位置</em>；结果会生成另一个由 0 和 1 构成的矩阵，并显示元素与元素的相等性。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">A = <span class="built_in">magic</span>(<span class="number">4</span>);</span><br><span class="line">B = A;</span><br><span class="line">B(<span class="number">1</span>,<span class="number">1</span>) = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">A == B</span><br><span class="line"></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">  <span class="number">4</span>×<span class="number">4</span> logical array</span><br><span class="line"></span><br><span class="line">   <span class="number">0</span>   <span class="number">1</span>   <span class="number">1</span>   <span class="number">1</span></span><br><span class="line">   <span class="number">1</span>   <span class="number">1</span>   <span class="number">1</span>   <span class="number">1</span></span><br><span class="line">   <span class="number">1</span>   <span class="number">1</span>   <span class="number">1</span>   <span class="number">1</span></span><br><span class="line">   <span class="number">1</span>   <span class="number">1</span>   <span class="number">1</span>   <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>检查两个变量之间的相等性的正确方法是使用 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/isequal.html"><code>isequal</code></a> 函数：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">isequal</span>(A, B), ...</span><br></pre></td></tr></table></figure>
+
+<p><code>isequal</code> 返回 <code>1</code>（表示 <code>true</code>）或 <code>0</code>（表示 <code>false</code>）的<em>标量</em>逻辑值，而不会返回矩阵，因此能被用于 <code>if</code> 函数计算表达式。通过使用上面的 <code>A</code> 和 <code>B</code> 矩阵，您可以获得</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isequal</span>(A,B)</span><br><span class="line"></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">  logical</span><br><span class="line"></span><br><span class="line">   <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>下面给出另一示例来重点介绍这一点。如果 <code>A</code> 和 <code>B</code> 为标量，下面的程序永远不会出现“意外状态”。但是对于大多数矩阵对（包括交换列的幻方矩阵），<em>所有</em>元素均不满足任何矩阵条件 <code>A &gt; B</code>、<code>A &lt; B</code> 或 <code>A == B</code>，因此将执行 <code>else</code> 子句：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> A &gt; B</span><br><span class="line">   <span class="string">&#x27;greater&#x27;</span></span><br><span class="line"><span class="keyword">elseif</span> A &lt; B</span><br><span class="line">   <span class="string">&#x27;less&#x27;</span></span><br><span class="line"><span class="keyword">elseif</span> A == B</span><br><span class="line">   <span class="string">&#x27;equal&#x27;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">   error(<span class="string">&#x27;Unexpected situation&#x27;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>有几个函数对减少标量条件的矩阵比较结果以便用于 <code>if</code> 非常有用，这些函数包括</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isequal</span></span><br><span class="line"><span class="built_in">isempty</span></span><br><span class="line">all</span><br><span class="line">any</span><br></pre></td></tr></table></figure>
+
+<h3 id="循环控制-for、while、continue、break"><a href="#循环控制-for、while、continue、break" class="headerlink" title="循环控制 - for、while、continue、break"></a>循环控制 - for、while、continue、break</h3><p>此部分涵盖为程序循环提供控制的 MATLAB 函数。</p>
+<h4 id="for"><a href="#for" class="headerlink" title="for"></a>for</h4><p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/for.html"><code>for</code></a> 循环按预先确定的固定次数重复一组语句。匹配的 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/end.html"><code>end</code></a> 用于界定语句结尾：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> n = <span class="number">3</span>:<span class="number">32</span></span><br><span class="line">   r(n) = rank(<span class="built_in">magic</span>(n));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">r</span><br></pre></td></tr></table></figure>
+
+<p>内部语句的终止分号禁止了循环中的重复输出，循环后的 <code>r</code> 显示最终结果。</p>
+<p>最好对循环进行缩进处理以便于阅读，特别是使用嵌套循环时：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:m</span><br><span class="line">   <span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span>:n</span><br><span class="line">      H(<span class="built_in">i</span>,<span class="built_in">j</span>) = <span class="number">1</span>/(<span class="built_in">i</span>+<span class="built_in">j</span>);</span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="while"><a href="#while" class="headerlink" title="while"></a>while</h4><p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/while.html"><code>while</code></a> 在逻辑条件的控制下将一组语句重复无限次。匹配的 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/end.html"><code>end</code></a> 用于界定语句结尾。</p>
+<p>下面是一个完整的程序，用于演示如何使用 <code>while</code>、<code>if</code>、<code>else</code> 和 <code>end</code> 来寻找区间对分法求多项式的零。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span>; fa = -Inf;</span><br><span class="line">b = <span class="number">3</span>; fb = Inf;</span><br><span class="line"><span class="keyword">while</span> b-a &gt; <span class="built_in">eps</span>*b</span><br><span class="line">   x = (a+b)/<span class="number">2</span>;</span><br><span class="line">   fx = x^<span class="number">3</span><span class="number">-2</span>*x<span class="number">-5</span>;</span><br><span class="line">   <span class="keyword">if</span> <span class="built_in">sign</span>(fx) == <span class="built_in">sign</span>(fa)</span><br><span class="line">      a = x; fa = fx;</span><br><span class="line">   <span class="keyword">else</span></span><br><span class="line">      b = x; fb = fx;</span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">x</span><br></pre></td></tr></table></figure>
+
+<p>结果生成多项式 x3 - 2x - 5 的根，即</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x =</span><br><span class="line">   <span class="number">2.09455148154233</span></span><br></pre></td></tr></table></figure>
+
+<p>在 <code>if</code> 语句部分中讨论的与矩阵比较相关的注意事项同样适用于 <code>while</code> 语句。</p>
+<h4 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h4><p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/continue.html"><code>continue</code></a> 语句将控制传递给它所在的 <code>for</code> 循环或 <code>while</code> 循环的下一迭代，并跳过循环体中的任何其余语句。此道理同样适用于嵌套循环中的 <code>continue</code> 语句。也就是说，执行会从遇到 <code>continue</code> 语句的循环开头继续。</p>
+<p>下面的示例演示的 <code>magic.m</code> 循环计算文件中的代码行数目的 <code>continue</code> 循环，并跳过所有空行和注释。<code>continue</code> 语句用于前进到 <code>magic.m</code> 中的下一行，而不会在遇到空行或注释行时增加行计数：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fid = fopen(<span class="string">&#x27;magic.m&#x27;</span>,<span class="string">&#x27;r&#x27;</span>);</span><br><span class="line">count = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> ~feof(fid)</span><br><span class="line">    line = fgetl(fid);</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isempty</span>(line) || strncmp(line,<span class="string">&#x27;%&#x27;</span>,<span class="number">1</span>) || ~ischar(line)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    count = count + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">fprintf(<span class="string">&#x27;%d lines\n&#x27;</span>,count);</span><br><span class="line">fclose(fid);</span><br></pre></td></tr></table></figure>
+
+<h4 id="break"><a href="#break" class="headerlink" title="break"></a>break</h4><p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/break.html"><code>break</code></a> 语句用于提前从 <code>for</code> 循环或 <code>while</code> 循环中退出。在嵌套循环中，<code>break</code> 仅从最里面的循环退出。</p>
+<p>下面对前述部分中的示例进行了改进。使用此 <code>break</code> 的优点是什么？</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span>; fa = -Inf;</span><br><span class="line">b = <span class="number">3</span>; fb = Inf;</span><br><span class="line"><span class="keyword">while</span> b-a &gt; <span class="built_in">eps</span>*b</span><br><span class="line">   x = (a+b)/<span class="number">2</span>;</span><br><span class="line">   fx = x^<span class="number">3</span><span class="number">-2</span>*x<span class="number">-5</span>;</span><br><span class="line">   <span class="keyword">if</span> fx == <span class="number">0</span></span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">   <span class="keyword">elseif</span> <span class="built_in">sign</span>(fx) == <span class="built_in">sign</span>(fa)</span><br><span class="line">      a = x; fa = fx;</span><br><span class="line">   <span class="keyword">else</span></span><br><span class="line">      b = x; fb = fx;</span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">x</span><br></pre></td></tr></table></figure>
+
+<h3 id="程序终止-return"><a href="#程序终止-return" class="headerlink" title="程序终止 - return"></a>程序终止 - return</h3><p>此部分包含用于在程序运行完成之前终止程序的 MATLAB <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/return.html"><code>return</code></a> 函数。</p>
+<h4 id="return"><a href="#return" class="headerlink" title="return"></a>return</h4><p><code>return</code> 终止当前命令序列，并将控制权返回给调用函数或键盘。此外，<code>return</code> 还用于终止 <code>keyboard</code> 模式。被调用的函数通常在到达函数末尾时将控制权转交给调用它的函数。您可以在被调用的函数中插入一个 <code>return</code> 语句，以便强制提前终止并将控制权转交给调用函数。</p>
+<h3 id="向量化"><a href="#向量化" class="headerlink" title="向量化"></a>向量化</h3><p>提高 MATLAB 程序的运行速度的一种方法是向量化构造程序时所使用的算法。其他编程语言可使用 <code>for</code> 循环或 <code>DO</code> 循环，而 MATLAB 可使用向量或矩阵运算。下面提供了一个与创建算法表相关的简单示例：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">0.01</span>;</span><br><span class="line">y = <span class="built_in">log10</span>(x);</span><br><span class="line"><span class="keyword">for</span> k = <span class="number">1</span>:<span class="number">999</span></span><br><span class="line">  x(k+<span class="number">1</span>) = x(k) + <span class="number">0.01</span>;</span><br><span class="line">  y(k+<span class="number">1</span>) = <span class="built_in">log10</span>(x(k+<span class="number">1</span>));</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>相同代码段的向量化版本为</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">.01</span>:<span class="number">.01</span>:<span class="number">10</span>;</span><br><span class="line">y = <span class="built_in">log10</span>(x);</span><br></pre></td></tr></table></figure>
+
+<p>对于更复杂的代码，向量化选项并不总是这么明显。</p>
+<h3 id="预分配"><a href="#预分配" class="headerlink" title="预分配"></a>预分配</h3><p>如果无法向量化某段代码，可以通过预分配存储输出结果的任何向量或数组来提高 <code>for</code> 循环的运行速度。例如，此代码使用函数 <code>zeros</code> 来预分配在 <code>for</code> 循环中创建的向量。这显著提高了 <code>for</code> 循环的执行速度：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">r = <span class="built_in">zeros</span>(<span class="number">32</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> n = <span class="number">1</span>:<span class="number">32</span></span><br><span class="line">    r(n) = rank(<span class="built_in">magic</span>(n));</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>如果未经过上述示例中的预分配，MATLAB 解释器会在每次遍历循环时将 <code>r</code> 向量增大一个元素。向量预分配避免了此步骤，并提高了执行速度。</p>
+<h2 id="6-脚本和函数"><a href="#6-脚本和函数" class="headerlink" title="6. 脚本和函数"></a>6. 脚本和函数</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>MATLAB® 提供了一个强大的编程语言和交互式计算环境。您可以使用此语言在 MATLAB 命令行中一次输入一个命令，也可以向某个文件写入一系列命令，按照执行任何 MATLAB 函数的相同方式来执行这些命令。使用 MATLAB 编辑器或任何其他文件编辑器可以创建您自己的函数文件。按照调用任何其他 MATLAB 函数或命令的相同方式来调用这些函数。</p>
+<p>两种程序文件：</p>
+<ul>
+<li>脚本，不接受输入参数或返回输出参数。它们处理工作区中的数据。</li>
+<li>函数，可接受输入参数，并返回输出参数。内部变量是函数的局部变量。</li>
+</ul>
+<p>如果您是新 MATLAB 程序员，您只需在当前文件夹中创建您希望尝试的程序文件。当您创建的文件越来越多时，您可能希望将这些文件组织到其他文件夹和个人工具箱，以便将其添加到您的 MATLAB 搜索路径中。</p>
+<p>如果您复制多个函数名称，MATLAB 会执行在搜索路径中显示的第一个函数。</p>
+<p>要查看程序文件（例如，<code>myfunction.m</code>）的内容，请使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type myfunction</span><br></pre></td></tr></table></figure>
+
+<h3 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h3><p>当调用<em>脚本</em>时，MATLAB 仅执行在文件中找到的命令。脚本可以处理工作区中的现有数据，也可以创建要在其中运行脚本的新数据。尽管脚本不会返回输出参数，其创建的任何变量都会保留在工作区中，以便在后续计算中使用。此外，脚本可以使用 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/plot.html"><code>plot</code></a> 等函数生成图形输出。</p>
+<p>例如，创建一个名为 <code>magicrank.m</code> 的文件，该文件包含下列 MATLAB 命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">% Investigate the rank of magic squares</span><br><span class="line">r = zeros(1,32);</span><br><span class="line">for n = 3:32</span><br><span class="line">   r(n) = rank(magic(n));</span><br><span class="line">end</span><br><span class="line">bar(r)</span><br></pre></td></tr></table></figure>
+
+<p>键入语句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">magicrank</span><br></pre></td></tr></table></figure>
+
+<p>使 MATLAB 执行命令、计算前 30 个幻方矩阵的秩，并绘制结果的条形图。执行完文件之后，变量 <code>n</code> 和 <code>r</code> 将保留在工作区中。</p>
+<p><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240921316.png" alt="img"></p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>函数是可接受输入参数并返回输出参数的文件。文件名和函数名称应当相同。函数处理其自己的工作区中的变量，此工作区不同于您在 MATLAB 命令提示符下访问的工作区。</p>
+<p><code>rank</code> 提供了一个很好的示例。文件 <code>rank.m</code> 位于文件夹</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">toolbox/matlab/matfun</span><br></pre></td></tr></table></figure>
+
+<p>您可以使用以下命令查看文件</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> rank</span><br></pre></td></tr></table></figure>
+
+<p>下面列出了此文件：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">r</span> = <span class="title">rank</span><span class="params">(A,tol)</span></span></span><br><span class="line"><span class="comment">%   RANK Matrix rank.</span></span><br><span class="line"><span class="comment">%   RANK(A) provides an estimate of the number of linearly</span></span><br><span class="line"><span class="comment">%   independent rows or columns of a matrix A.</span></span><br><span class="line"><span class="comment">%   RANK(A,tol) is the number of singular values of A</span></span><br><span class="line"><span class="comment">%   that are larger than tol.</span></span><br><span class="line"><span class="comment">%   RANK(A) uses the default tol = max(size(A)) * norm(A) * eps.</span></span><br><span class="line"></span><br><span class="line">s = svd(A);</span><br><span class="line"><span class="keyword">if</span> nargin==<span class="number">1</span></span><br><span class="line">   tol = <span class="built_in">max</span>(<span class="built_in">size</span>(A)&#x27;) * <span class="built_in">max</span>(s) * <span class="built_in">eps</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">r = sum(s &gt; tol);</span><br></pre></td></tr></table></figure>
+
+<p>函数的第一行以关键字 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/function.html"><code>function</code></a> 开头。它提供函数名称和参数顺序。本示例中具有两个输入参数和一个输出参数。</p>
+<p>第一个空行或可执行代码行前面的后续几个行是提供帮助文本的注释行。当键入以下命令时，会输出这些行</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">help rank</span><br></pre></td></tr></table></figure>
+
+<p>帮助文本的第一行是 H1 行，当对文件夹使用 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/lookfor.html"><code>lookfor</code></a> 命令或请求 <code>help</code> 时，MATLAB 会显示此行。</p>
+<p>文件的其余部分是用于定义函数的可执行 MATLAB 代码。函数体中引入的变量 <code>s</code> 以及第一行中的变量（即 <code>r</code>、<code>A</code> 和 <code>tol</code>）均为函数的<em>局部</em>变量；他们不同于 MATLAB 工作区中的任何变量。</p>
+<p>本示例演示了 MATLAB 函数不同于其他编程语言函数的一个方面，即可变数目的参数。可以采用多种不同方法使用 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/rank.html"><code>rank</code></a> 函数：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rank(A)</span><br><span class="line">r = rank(A)</span><br><span class="line">r = rank(A,<span class="number">1.e-6</span>)</span><br></pre></td></tr></table></figure>
+
+<p>许多函数都按此方式运行。如果未提供输出参数，结果会存储在 <code>ans</code> 中。如果未提供第二个输入参数，此函数会运用默认值进行计算。函数体中提供了两个名为 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/nargin.html"><code>nargin</code></a> 和 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/nargout.html"><code>nargout</code></a> 的数量，用于告知与函数的每次特定使用相关的输入和输出参数的数目。<code>rank</code> 函数使用 <code>nargin</code>，而不需要使用 <code>nargout</code>。</p>
+<h3 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h3><p>MATLAB 提供了多种不同函数用于编程。</p>
+<h4 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h4><p><em>匿名函数</em>是一种简单形式的 MATLAB 函数，该函数在一个 MATLAB 语句中定义。它包含一个 MATLAB 表达式和任意数目的输入和输出参数。您可以直接在 MATLAB 命令行中定义匿名函数，也可以在函数或脚本中定义匿名函数。这样，您可以快速创建简单函数，而不必每次为函数创建文件。</p>
+<p>根据表达式创建匿名函数的语法为</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f = @(arglist)expression</span><br></pre></td></tr></table></figure>
+
+<p>下面的语句创建一个求某个数字的平方的匿名函数。当调用此函数时，MATLAB 会将您传入的值赋值给变量 <code>x</code>，然后在方程 <code>x.^2</code> 中使用 <code>x</code>：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqr = @(x) x.^<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p>要执行 <code>sqr</code> 函数，请键入</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = sqr(<span class="number">5</span>)</span><br><span class="line">a =</span><br><span class="line">   <span class="number">25</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="主函数和局部函数"><a href="#主函数和局部函数" class="headerlink" title="主函数和局部函数"></a>主函数和局部函数</h4><p>任何非匿名函数必须在文件中定义。每个此类函数文件都包含一个必需的<em>主函数</em>（最先显示）和任意数目的<em>局部函数</em>（位于主函数后面）。主函数的作用域比局部函数更广。因此，主函数可以从定义这些函数的文件外（例如，从 MATLAB 命令行或从其他文件的函数中）调用，而局部函数则没有此功能。局部函数仅对其自己的文件中的主函数和其他局部函数可见。</p>
+<p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/learn_matlab/scripts-and-functions.html#f4-25892">函数</a>部分中显示的 <code>rank</code> 函数就是一个主函数的示例。</p>
+<h4 id="私有函数"><a href="#私有函数" class="headerlink" title="私有函数"></a>私有函数</h4><p><em>私有函数</em>是一种主函数。其特有的特征是：仅对一组有限的其他函数可见。如果您希望限制对某个函数的访问，或者当您选择不公开某个函数的实现时，此种函数非常有用。</p>
+<p>私有函数位于带专有名称 <code>private</code> 的子文件夹中。它们是仅可在母文件夹中可见的函数。例如，假定文件夹 <code>newmath</code> 位于 MATLAB 搜索路径中。<code>newmath</code> 的名为 <code>private</code> 子文件夹可包含只能供 <code>newmath</code> 中的函数调用的特定函数。</p>
+<p>由于私有函数在父文件夹外部不可见，因此可以使用与其他文件夹中的函数相同的名称。如果您希望创建您自己的特定函数的版本，并在其他文件夹中保留原始函数，此功能非常有用。由于 MATLAB 在标准函数之前搜索私有函数，因此在查找名为 <code>test.m</code> 的非私有文件之前，它将查找名为 <code>test.m</code> 的私有函数。</p>
+<h4 id="嵌套函数"><a href="#嵌套函数" class="headerlink" title="嵌套函数"></a>嵌套函数</h4><p>您可以在函数体中定义其他函数。这些函数称为外部函数中的<em>嵌套</em>函数。嵌套函数包含任何其他函数的任何或所有组成部分。在本示例中，函数 <code>B</code> 嵌套在函数 <code>A</code> 中：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span> = <span class="title">A</span><span class="params">(p1, p2)</span></span></span><br><span class="line">...</span><br><span class="line">B(p2)</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">y</span> = <span class="title">B</span><span class="params">(p3)</span></span></span><br><span class="line">   ...</span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>与其他函数一样，嵌套函数具有其自己的工作区，可用于存储函数所使用的变量。但是，它还可以访问其嵌套在的所有函数的工作区。因此，举例来说，主函数赋值的变量可以由嵌套在主函数中的任意级别的函数读取或覆盖。类似地，嵌套函数中赋值的变量可以由包含该函数的任何函数读取或被覆盖。</p>
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><p>如果您想要多个函数共享一个变量副本，只需在所有函数中将此变量声明为 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/global.html"><code>global</code></a>。如果您想要基础工作区访问此变量，请在命令行中执行相同操作。全局声明必须在函数中实际使用变量之前进行。全局变量名称使用大写字母有助于将其与其他变量区分开来，但这不是必需的。例如，在名为 <code>falling.m</code> 的文件创建一个新函数：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">h</span> = <span class="title">falling</span><span class="params">(t)</span></span></span><br><span class="line"><span class="keyword">global</span> GRAVITY</span><br><span class="line">h = <span class="number">1</span>/<span class="number">2</span>*GRAVITY*t.^<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p>然后，以交互方式输入语句</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">global</span> GRAVITY</span><br><span class="line">GRAVITY = <span class="number">32</span>;</span><br><span class="line">y = falling((<span class="number">0</span>:<span class="number">.1</span>:<span class="number">5</span>)&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>通过上述两条全局语句，可以在函数内使用在命令提示符下赋值给 <code>GRAVITY</code> 的值。然后，您可以按交互方式修改 <code>GRAVITY</code> 并获取新解，而不必编辑任何文件。</p>
+<h3 id="命令与函数语法"><a href="#命令与函数语法" class="headerlink" title="命令与函数语法"></a>命令与函数语法</h3><p>您可以编写接受字符参数的 MATLAB 函数，而不必使用括号和引号。也就是说，MATLAB 将</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo a b c</span><br></pre></td></tr></table></figure>
+
+<p>解释为</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo(<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>但是，当使用不带引号的命令格式时，MATLAB 无法返回输出参数。例如，</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">legend</span> apples oranges</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>apples</code> 和 <code>oranges</code> 作为标签在绘图上创建图例。如果您想要 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/legend.html"><code>legend</code></a> 命令返回其输出参数，必须使用带引号的格式：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[legh,objh] = <span class="built_in">legend</span>(<span class="string">&#x27;apples&#x27;</span>,<span class="string">&#x27;oranges&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>此外，如果其中任一参数不是字符向量，必须使用带引号的格式。</p>
+<p><strong>小心</strong></p>
+<p>虽然不带引号的命令语法非常方便，但在某些情况下可能会出现使用不当的情形，而 MATLAB 并不会产生错误信息。</p>
+<h4 id="在代码中构造字符参数"><a href="#在代码中构造字符参数" class="headerlink" title="在代码中构造字符参数"></a>在代码中构造字符参数</h4><p>带引号的函数格式可用于在代码中构造字符参数。下面的示例处理多个数据文件，即 <code>August1.dat</code>、<code>August2.dat</code> 等。它使用函数 <a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/int2str.html"><code>int2str</code></a>，该函数将整数转换为字符以便生成文件名：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> d = <span class="number">1</span>:<span class="number">31</span></span><br><span class="line">   s = [<span class="string">&#x27;August&#x27;</span> int2str(d) <span class="string">&#x27;.dat&#x27;</span>];</span><br><span class="line">   load(s) </span><br><span class="line">   <span class="comment">% Code to process the contents of the d-th file</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">magic-H</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://magic-h.top/1793.html">https://magic-h.top/1793.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://magic-H.top" target="_blank">magic-H</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MATLAB/">MATLAB</a></div><div class="post_share"><div class="social-share" data-image="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/25921.html"><img class="prev-cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207251735416.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Java刷题笔记（一）</div></div></a></div><div class="next-post pull-right"><a href="/36545.html"><img class="next-cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207240929284.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Markdown数学公式</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/17153.html" title="MATLAB快速入门（一）"><img class="cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-20</div><div class="title">MATLAB快速入门（一）</div></div></a></div><div><a href="/54139.html" title="MATLAB快速入门（二）"><img class="cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-21</div><div class="title">MATLAB快速入门（二）</div></div></a></div><div><a href="/57090.html" title="MATLAB快速入门（三）"><img class="cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-22</div><div class="title">MATLAB快速入门（三）</div></div></a></div><div><a href="/15204.html" title="MATLAB快速入门（六）"><img class="cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-23</div><div class="title">MATLAB快速入门（六）</div></div></a></div><div><a href="/45507.html" title="MATLAB快速入门（四）"><img class="cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-23</div><div class="title">MATLAB快速入门（四）</div></div></a></div><div><a href="/29565.html" title="MATLAB快速入门（五）"><img class="cover" src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207211037802.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-23</div><div class="title">MATLAB快速入门（五）</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s4.ax1x.com/2022/02/18/HT4dgI.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">magic-H</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/magic-H728"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/magic-H728" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:h1239392085@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="card-widget"><div class="item-headline"><i></i><span></span></div><div class="item-content"></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E7%AE%80%E4%BB%8B"><span class="toc-text">一.简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%83%EF%BC%89"><span class="toc-text">二. 快速入门（七）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E7%BD%91%E6%A0%BC%E5%9B%BE%E5%92%8C%E6%9B%B2%E9%9D%A2%E5%9B%BE"><span class="toc-text">1. 创建网格图和曲面图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%BD%91%E6%A0%BC%E5%9B%BE%E5%92%8C%E6%9B%B2%E9%9D%A2%E5%9B%BE"><span class="toc-text">关于网格图和曲面图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8C%85%E5%90%AB%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text">可视化包含两个变量的函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E6%AD%A3%E5%BC%A6%E5%87%BD%E6%95%B0"><span class="toc-text">绘制正弦函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%A9%E8%89%B2%E6%9B%B2%E9%9D%A2%E5%9B%BE"><span class="toc-text">彩色曲面图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%9B%B2%E9%9D%A2%E5%9B%BE%E8%AE%BE%E7%BD%AE%E4%B8%BA%E9%80%8F%E6%98%8E"><span class="toc-text">将曲面图设置为透明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%81%AF%E5%85%89%E7%85%A7%E4%BA%AE%E6%9B%B2%E9%9D%A2%E5%9B%BE"><span class="toc-text">使用灯光照亮曲面图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%9B%B2%E9%9D%A2%E5%9B%BE"><span class="toc-text">操作曲面图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%98%BE%E7%A4%BA%E5%9B%BE%E5%83%8F"><span class="toc-text">2. 显示图像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE"><span class="toc-text">图像数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E5%9B%BE%E5%83%8F"><span class="toc-text">读取和写入图像</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%89%93%E5%8D%B0%E5%9B%BE%E5%BD%A2"><span class="toc-text">3. 打印图形</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%8D%B0%E6%A6%82%E8%BF%B0"><span class="toc-text">打印概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E2%80%9C%E6%96%87%E4%BB%B6%E2%80%9D%E8%8F%9C%E5%8D%95%E6%89%93%E5%8D%B0"><span class="toc-text">从“文件”菜单打印</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86%E5%9B%BE%E7%AA%97%E5%AF%BC%E5%87%BA%E5%88%B0%E5%9B%BE%E5%BD%A2%E6%96%87%E4%BB%B6"><span class="toc-text">将图窗导出到图形文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Print-%E5%91%BD%E4%BB%A4"><span class="toc-text">使用 Print 命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A4%84%E7%90%86%E5%9B%BE%E5%BD%A2%E5%AF%B9%E8%B1%A1"><span class="toc-text">4. 处理图形对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E5%AF%B9%E8%B1%A1"><span class="toc-text">图形对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%9B%BE%E5%BD%A2%E5%AF%B9%E8%B1%A1"><span class="toc-text">常见图形对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="toc-text">访问对象属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-text">查找对象的属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="toc-text">设置对象属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E7%8E%B0%E6%9C%89%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-text">设置现有对象的属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%A4%9A%E4%B8%AA%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-text">设置多个属性值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BA%8E%E5%A4%84%E7%90%86%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text">用于处理对象的函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0"><span class="toc-text">传递参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E7%8E%B0%E6%9C%89%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8F%A5%E6%9F%84"><span class="toc-text">查找现有对象的句柄</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E7%89%B9%E5%AE%9A%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%89%80%E6%9C%89%E5%AF%B9%E8%B1%A1"><span class="toc-text">查找特定类型的所有对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E5%85%B7%E6%9C%89%E7%89%B9%E5%AE%9A%E5%B1%9E%E6%80%A7%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="toc-text">查找具有特定属性的对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E6%90%9C%E7%B4%A2%E8%8C%83%E5%9B%B4"><span class="toc-text">限制搜索范围</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%8E%A7%E5%88%B6%E6%B5%81"><span class="toc-text">5. 控制流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%8E%A7%E5%88%B6-if%E3%80%81else%E3%80%81switch"><span class="toc-text">条件控制 - if、else、switch</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84%E6%AF%94%E8%BE%83"><span class="toc-text">条件语句中的数组比较</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6-for%E3%80%81while%E3%80%81continue%E3%80%81break"><span class="toc-text">循环控制 - for、while、continue、break</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#for"><span class="toc-text">for</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#while"><span class="toc-text">while</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#continue"><span class="toc-text">continue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#break"><span class="toc-text">break</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E7%BB%88%E6%AD%A2-return"><span class="toc-text">程序终止 - return</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#return"><span class="toc-text">return</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E5%8C%96"><span class="toc-text">向量化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E5%88%86%E9%85%8D"><span class="toc-text">预分配</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E8%84%9A%E6%9C%AC%E5%92%8C%E5%87%BD%E6%95%B0"><span class="toc-text">6. 脚本和函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-text">脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-text">函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-text">函数类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="toc-text">匿名函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E5%87%BD%E6%95%B0%E5%92%8C%E5%B1%80%E9%83%A8%E5%87%BD%E6%95%B0"><span class="toc-text">主函数和局部函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%81%E6%9C%89%E5%87%BD%E6%95%B0"><span class="toc-text">私有函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%87%BD%E6%95%B0"><span class="toc-text">嵌套函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text">全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95"><span class="toc-text">命令与函数语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%9E%84%E9%80%A0%E5%AD%97%E7%AC%A6%E5%8F%82%E6%95%B0"><span class="toc-text">在代码中构造字符参数</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/25737.html" title="数据结构OJ"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202301131413619.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构OJ"/></a><div class="content"><a class="title" href="/25737.html" title="数据结构OJ">数据结构OJ</a><time datetime="2023-01-13T00:00:00.000Z" title="发表于 2023-01-13 00:00:00">2023-01-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/48665.html" title="Notion知识体系管理工具"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207311705467.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Notion知识体系管理工具"/></a><div class="content"><a class="title" href="/48665.html" title="Notion知识体系管理工具">Notion知识体系管理工具</a><time datetime="2022-07-31T00:00:00.000Z" title="发表于 2022-07-31 00:00:00">2022-07-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2567.html" title="Java刷题笔记（三）"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207291555693.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java刷题笔记（三）"/></a><div class="content"><a class="title" href="/2567.html" title="Java刷题笔记（三）">Java刷题笔记（三）</a><time datetime="2022-07-30T00:00:00.000Z" title="发表于 2022-07-30 00:00:00">2022-07-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/62779.html" title="Java刷题笔记（二）"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207291555693.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java刷题笔记（二）"/></a><div class="content"><a class="title" href="/62779.html" title="Java刷题笔记（二）">Java刷题笔记（二）</a><time datetime="2022-07-29T00:00:00.000Z" title="发表于 2022-07-29 00:00:00">2022-07-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/64644.html" title="线性表（下）"><img src="https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207261740136.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性表（下）"/></a><div class="content"><a class="title" href="/64644.html" title="线性表（下）">线性表（下）</a><time datetime="2022-07-28T00:00:00.000Z" title="发表于 2022-07-28 00:00:00">2022-07-28</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://testingcf.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207182124785.png')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By magic-H</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><img src="https://gcore.jsdelivr.net/gh/magic-H728/Store@master/blog-img/202207181316087.png">
+<a href="http://www.beian.miit.gov.cn/"  style="color:#f72b07" target="_blank">粤ICP备2022027428号</a><div class="footer_custom_text">Hi, welcome to my <a href="magic-h.top">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://magic-h-mr0qem8oh-magic-h728.vercel.app/',
+      path: location.pathname,
+      visitor: false,
+      dark: 'html[data-theme="dark"]'
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js').then(initWaline)
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="200,100,255" opacity="0.7" zIndex="-1" count="118" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div></body></html>
